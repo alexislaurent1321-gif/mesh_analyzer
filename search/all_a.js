@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['triangle_0',['Triangle',['../structTriangle.html',1,'']]],
-  ['triangles_1',['triangles',['../classMesh.html#acd19d61e90f1e48905bf53b36ee229f2',1,'Mesh']]]
+  ['vertices_0',['vertices',['../classMesh.html#a0ea7dea37924ad4fb3ac9682641df291',1,'Mesh']]]
 ];
