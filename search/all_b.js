@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_0',['z',['../structPoint.html#a9a666531e0e99adff132be93d2407d0c',1,'Point']]]
+  ['vertices_0',['vertices',['../classMesh.html#a0ea7dea37924ad4fb3ac9682641df291',1,'Mesh']]]
 ];
