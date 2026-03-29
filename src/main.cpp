@@ -2,6 +2,7 @@
 
 #include "mesh.h"
 
+// Main function to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality
 int main() {
     Mesh mesh;
 
