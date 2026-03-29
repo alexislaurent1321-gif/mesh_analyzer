@@ -55,7 +55,6 @@ public:
 
     // Calculate aspect ratio of a face (we expect it to be close to 1 for equilateral triangles)
     float calculateAspectRatio(const Face& f) const {
-        //  a*b*c / ( (b+c-a)*(c+a-b)*(a+b-c) )
         float a = vertices[f.v[0]].distance(vertices[f.v[1]]);
         float b = vertices[f.v[1]].distance(vertices[f.v[2]]);
         float c = vertices[f.v[2]].distance(vertices[f.v[0]]);
@@ -69,6 +68,7 @@ public:
         std::cout << "Vertices : " << vertices.size() << std::endl;
         std::cout << "Faces : " << faces.size() << std::endl;
         std::cout << "Unique edges : " << countUniqueEdges() << std::endl;
+        // std::cout << "Aspect ratio : " << calculateAspectRatio() << std::endl;
     }
 
     // Load mesh from OBJ file using tinyobjloader
