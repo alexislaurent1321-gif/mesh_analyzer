@@ -8,6 +8,8 @@ find_package(tinyobjloader CONFIG REQUIRED)
 
 add_executable(mesh_analyzer 
     src/main.cpp 
+    src/point.cpp
+    src/mesh.cpp
 )
 
 target_include_directories(mesh_analyzer PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

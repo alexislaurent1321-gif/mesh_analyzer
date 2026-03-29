@@ -28,9 +28,7 @@ struct Point {
      * 
      * @return float length of the vector
      */
-    float length() const { 
-        return std::sqrt(x*x + y*y + z*z); 
-    }
+    float length() const;
 
     /**
      * @brief Subtract another point from this point to get the vector between them
@@ -38,9 +36,7 @@ struct Point {
      * @param other 
      * @return Point resulting vector from the subtraction
      */
-    Point operator-(const Point& other) const {
-        return Point{x - other.x, y - other.y, z - other.z};
-    }
+    Point operator-(const Point& other) const;
 
     /**
      * @brief Calculate the distance between this point and another point
@@ -48,9 +44,7 @@ struct Point {
      * @param other 
      * @return float distance between the points
      */
-    float distance(const Point& other) const {
-        return (*this - other).length();
-    }
+    float distance(const Point& other) const;
 
     /**
      * @brief Overload the << operator to print the point's coordinates
@@ -59,8 +53,5 @@ struct Point {
      * @param p 
      * @return std::ostream& 
      */
-    friend std::ostream& operator<<(std::ostream& os, const Point& p) {
-        os << "(" << p.x << ", " << p.y << ", " << p.z << ")";
-        return os;
-    }
+    friend std::ostream& operator<<(std::ostream& os, const Point& p);
 };
