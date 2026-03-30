@@ -1,3 +1,6 @@
+#ifndef MESH_H
+#define MESH_H
+
 #include <vector>
 #include <array>
 #include <iostream>
@@ -83,3 +86,5 @@ public:
      */
     bool loadObj(const std::string& path, Mesh& myMesh);
 };
+
+#endif

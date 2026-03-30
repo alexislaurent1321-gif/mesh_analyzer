@@ -1,4 +1,5 @@
 /build
 /.vscode 
 /html
-/main.exe
+*.exe
+*.vtk

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "mesh.h"
+#include "exportToVTK.h"
 
 // Main function to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality
 int main() {
@@ -12,6 +13,8 @@ int main() {
     }
 
     mesh.analyzeMesh();
+
+    exportToVTK("output.vtk", mesh);    
     
     return 0;
 }

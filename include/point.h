@@ -1,3 +1,6 @@
+#ifndef POINT_H
+#define POINT_H
+
 #include <iostream>
 #include <cmath>
 
@@ -55,3 +58,5 @@ struct Point {
      */
     friend std::ostream& operator<<(std::ostream& os, const Point& p);
 };
+
+#endif
