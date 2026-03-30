@@ -1,4 +1,5 @@
 #include "mesh.h"
+#include <numeric>
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <tiny_obj_loader.h>
@@ -25,11 +26,21 @@ float Mesh::calculateAspectRatio(const Triangle& t) const {
     return num / denom;
 }
 
-void Mesh::analyzeMesh() const {
+void Mesh::calculateAspectRatios() {
+    ratios.clear();
+    for (const auto& t : triangles) {
+        ratios.push_back(calculateAspectRatio(t));
+    }
+}
+
+void Mesh::analyzeMesh() {
     std::cout << "Vertices : " << vertices.size() << std::endl;
     std::cout << "Triangles : " << triangles.size() << std::endl;
     std::cout << "Unique edges : " << countUniqueEdges() << std::endl;
-    // std::cout << "Aspect ratio : " << calculateAspectRatio() << std::endl;
+    calculateAspectRatios();
+    std::cout << "min aspect ratio : " << *std::min_element(ratios.begin(), ratios.end()) << std::endl;
+    std::cout << "max aspect ratio : " << *std::max_element(ratios.begin(), ratios.end()) << std::endl;
+    std::cout << "mean aspect ratio : " << std::accumulate(ratios.begin(), ratios.end(), 0.f) / ratios.size() << std::endl;
 }
 
 bool Mesh::loadObj(const std::string& path, Mesh& myMesh) {

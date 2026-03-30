@@ -71,10 +71,16 @@ public:
     float calculateAspectRatio(const Triangle& t) const;
 
     /**
+     * @brief  Calculate the aspect ratio for all triangles in the mesh and store them in the ratios vector
+     * 
+     */
+    void calculateAspectRatios();
+    
+    /**
      * @brief  Analyze the mesh by printing out the number of vertices, triangles, and unique edges. Optionally, it could also calculate and print the aspect ratio of each triangle for quality analysis.
      * 
      */
-    void analyzeMesh() const;
+    void analyzeMesh();
 
     /**
      * @brief  Load a mesh from an OBJ file using tinyobjloader
