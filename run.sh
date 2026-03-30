@@ -10,3 +10,5 @@ elif [ -f "./build/Release/mesh_analyzer" ]; then
 else
     echo "Erreur : Exécutable introuvable."
 fi
+
+paraview output.vtk
