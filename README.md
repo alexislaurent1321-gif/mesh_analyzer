@@ -12,7 +12,10 @@ To ensure optimal search performance within the graph and avoid duplicate edges,
 
 
 ## Aspect ratio formula
- 
+Let there be a triangle with sides a, b, and c. The formula is
+$$ \frac{abc}{(b+c-a)(c+a-b)(a+b-c)} $$
+
+# Results
 
 
 ## Compilation and execution
