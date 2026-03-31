@@ -4,3 +4,4 @@
 *.exe
 *.vtk
 /img
+models/*.mtl
