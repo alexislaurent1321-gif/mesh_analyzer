@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['operator_2d_0',['operator-',['../structPoint.html#a17b65599126120074e6295ddad1ca906',1,'Point']]],
-  ['operator_3c_3c_1',['operator&lt;&lt;',['../structPoint.html#ab322db2b5457c54c9b959c6336792d2d',1,'Point']]]
+  ['length_0',['length',['../structPoint.html#ae50b05be952e97997e400b479b5ce671',1,'Point']]],
+  ['lines_5ft_1',['lines_t',['../structtinyobj_1_1lines__t.html',1,'tinyobj']]],
+  ['loadobj_2',['loadObj',['../classMesh.html#a4649f59edc11eeaaf59daa770ea0c7fc',1,'Mesh']]]
 ];
