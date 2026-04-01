@@ -16,6 +16,8 @@ Let there be a triangle with sides a, b, and c. The formula is
 $$ \frac{abc}{(b+c-a)(c+a-b)(a+b-c)} $$
 A result of 1 corresponds to an equilateral triangle and it is greater than 1 by the amount that the triangle is distorted.
 
+## Boundaries detection
+Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle. 
 
 # Results
 ## Cube
@@ -46,6 +48,11 @@ mean aspect ratio : 1.37805
 ```
 We make sure that we get a higher value on the side faces, since the triangles are more stretched : 
 <img width="600" height="300" alt="cube2_ratios" src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" />
+
+## Boudaries detection
+
+<img width="600" height="400" alt="demi_sphere_boundaries" src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" />
+
 
 
 # Upcoming changes
