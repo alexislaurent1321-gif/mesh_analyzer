@@ -7,6 +7,7 @@ Start of the mesh generation project. For now, it involves evaluating the qualit
 This is a 2D triangular mesh class. It contains: 
 - an `Edge` structure that checks for equality to prevent duplicates
 - an `EdgeHash` structure that combines the hashes of the vertices to form a hash for the edge
+The mesh is loaded using the `tinyobjloader` library (included in this project).
 
 #### hashing
 To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. This method involves using a `std::unordered_set` structure with a custom hash function to identify unique edges with an average time complexity of $O(1)$.
@@ -21,6 +22,7 @@ $$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$
 
 ## Boundaries detection
 Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle. 
+To evaluate the valence of the edges (the number of triangles they belong to), we create a `std::unordered_map` that stores integers as values and edges as keys. We iterate through the edges of each triangle and increment the value corresponding to the evaluated edge by 1.
 
 # Results
 ## Cube
