@@ -17,8 +17,9 @@ Let there be a triangle with sides a, b, and c. The formula is
 
 $$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$
 
-- A ratio of 1 corresponds to a perfect equilateral triangle.
-- The higher the ratio, the more distorted the triangle becomes, which can hinder the convergence of the solvers.
+This is a basic finite element formula : 
+- a ratio of 1 corresponds to a perfect equilateral triangle.
+- the higher the ratio, the more distorted the triangle becomes, which can hinder the convergence of the solvers.
 
 ## Boundaries detection
 Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle. 
@@ -80,3 +81,7 @@ The results show that all edges are detected.
 # Compilation and execution
 
 Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible.
+
+### Dependencies
+- `tinyobjloader` (included in the code)
+- `ParaView`
