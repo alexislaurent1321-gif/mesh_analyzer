@@ -106,10 +106,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>analyzeMesh</b> ()</t
 <tr class="memdesc:a72e5799cfca3db4b75390222190d0890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the mesh by printing out the number of vertices, triangles, and unique edges. Optionally, it could also calculate and print the aspect ratio of each triangle for quality analysis. <br /></td></tr>
 <tr class="memitem:a3682437e3218ed43fa1f63fad796225e" id="r_a3682437e3218ed43fa1f63fad796225e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3682437e3218ed43fa1f63fad796225e">loadObj</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:a3682437e3218ed43fa1f63fad796225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a mesh from an OBJ file using tinyobjloader.  <br /></td></tr>
-<tr class="memitem:ad60c2eef2ae7c6e6f9db27d865eefec9" id="r_ad60c2eef2ae7c6e6f9db27d865eefec9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structMesh_1_1Edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad60c2eef2ae7c6e6f9db27d865eefec9">getBoundaryEdges</a> () const</td></tr>
-<tr class="memdesc:ad60c2eef2ae7c6e6f9db27d865eefec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary edges of the mesh.  <br /></td></tr>
-<tr class="memitem:a43a5cc7770352cbc4c5d22c6c1096aa7" id="r_a43a5cc7770352cbc4c5d22c6c1096aa7"><td class="memItemLeft" align="right" valign="top"><a id="a43a5cc7770352cbc4c5d22c6c1096aa7" name="a43a5cc7770352cbc4c5d22c6c1096aa7"></a>
-std::unordered_map&lt; <a class="el" href="structMesh_1_1Edge.html">Mesh::Edge</a>, int, <a class="el" href="structMesh_1_1EdgeHash.html">Mesh::EdgeHash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getEdgeValences</b> () const</td></tr>
+<tr class="memitem:a881a3557d22ac4fe200e8f8c417f550f" id="r_a881a3557d22ac4fe200e8f8c417f550f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structMesh_1_1Edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a881a3557d22ac4fe200e8f8c417f550f">getBoundaryEdges</a> () const</td></tr>
+<tr class="memdesc:a881a3557d22ac4fe200e8f8c417f550f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary edges of the mesh.  <br /></td></tr>
+<tr class="memitem:a43a5cc7770352cbc4c5d22c6c1096aa7" id="r_a43a5cc7770352cbc4c5d22c6c1096aa7"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="structMesh_1_1Edge.html">Mesh::Edge</a>, int, <a class="el" href="structMesh_1_1EdgeHash.html">Mesh::EdgeHash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43a5cc7770352cbc4c5d22c6c1096aa7">getEdgeValences</a> () const</td></tr>
+<tr class="memdesc:a43a5cc7770352cbc4c5d22c6c1096aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="structMesh_1_1Edge.html" title="A struct representing an edge in the mesh.">Edge</a> Valences object.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -172,31 +172,43 @@ std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b
 
 </div>
 </div>
-<a id="ad60c2eef2ae7c6e6f9db27d865eefec9" name="ad60c2eef2ae7c6e6f9db27d865eefec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad60c2eef2ae7c6e6f9db27d865eefec9">&#9670;&#160;</a></span>getBoundaryEdges()</h2>
+<a id="a881a3557d22ac4fe200e8f8c417f550f" name="a881a3557d22ac4fe200e8f8c417f550f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a881a3557d22ac4fe200e8f8c417f550f">&#9670;&#160;</a></span>getBoundaryEdges()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structMesh_1_1Edge.html">Edge</a> &gt; Mesh::getBoundaryEdges </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structMesh_1_1Edge.html">Mesh::Edge</a> &gt; Mesh::getBoundaryEdges </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the boundary edges of the mesh. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector containing the boundary edges </dd></dl>
+
+</div>
+</div>
+<a id="a43a5cc7770352cbc4c5d22c6c1096aa7" name="a43a5cc7770352cbc4c5d22c6c1096aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a5cc7770352cbc4c5d22c6c1096aa7">&#9670;&#160;</a></span>getEdgeValences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="structMesh_1_1Edge.html">Mesh::Edge</a>, int, <a class="el" href="structMesh_1_1EdgeHash.html">Mesh::EdgeHash</a> &gt; Mesh::getEdgeValences </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="structMesh_1_1Edge.html" title="A struct representing an edge in the mesh.">Edge</a> Valences object. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::unordered_map&lt;Mesh::Edge, int, Mesh::EdgeHash&gt; </dd></dl>
 
 </div>
 </div>

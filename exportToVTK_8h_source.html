@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (!file.is_open()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Identify boundary edges (edges that belong to only one triangle)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span> edgeCounts = mesh.getEdgeValences();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">auto</span> edgeCounts = mesh.<a class="code hl_function" href="classMesh.html#a43a5cc7770352cbc4c5d22c6c1096aa7">getEdgeValences</a>();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::vector&lt;Mesh::Edge&gt; boundaryEdges;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; [edge, count] : edgeCounts) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">if</span> (count == 1) boundaryEdges.push_back(edge);</div>
@@ -137,6 +137,7 @@ $(function() {
 <div class="ttc" id="aclassMesh_html"><div class="ttname"><a href="classMesh.html">Mesh</a></div><div class="ttdoc">A class representing a 3D mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:29</div></div>
 <div class="ttc" id="aclassMesh_html_a08a97a2d8eaec882bfa11849646cb712"><div class="ttname"><a href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">Mesh::ratios</a></div><div class="ttdeci">std::vector&lt; float &gt; ratios</div><div class="ttdoc">aspect ratios of triangles (for quality analysis)</div><div class="ttdef"><b>Definition</b> mesh.h:34</div></div>
 <div class="ttc" id="aclassMesh_html_a0ea7dea37924ad4fb3ac9682641df291"><div class="ttname"><a href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">Mesh::vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; vertices</div><div class="ttdoc">List of vertices in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:32</div></div>
+<div class="ttc" id="aclassMesh_html_a43a5cc7770352cbc4c5d22c6c1096aa7"><div class="ttname"><a href="classMesh.html#a43a5cc7770352cbc4c5d22c6c1096aa7">Mesh::getEdgeValences</a></div><div class="ttdeci">std::unordered_map&lt; Mesh::Edge, int, Mesh::EdgeHash &gt; getEdgeValences() const</div><div class="ttdoc">Get the Edge Valences object.</div><div class="ttdef"><b>Definition</b> mesh.cpp:109</div></div>
 <div class="ttc" id="aclassMesh_html_acd19d61e90f1e48905bf53b36ee229f2"><div class="ttname"><a href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">Mesh::triangles</a></div><div class="ttdeci">std::vector&lt; Triangle &gt; triangles</div><div class="ttdoc">List of triangles defined by vertex indices.</div><div class="ttdef"><b>Definition</b> mesh.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
