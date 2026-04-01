@@ -60,7 +60,6 @@ The results show that all edges are detected.
 
 # Upcoming changes
 ### in the coming days
-- improvement of code structure
 - **smoothing :** use of a smoothing technique (likely Laplacian) to improve the overall aspect ratio of the mesh
 - support for quad meshes (maybe)
 ### in the short term
