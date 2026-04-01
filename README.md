@@ -59,9 +59,10 @@ The results show that all edges are detected.
 - **smoothing :** use of a smoothing technique (likely Laplacian) to improve the overall aspect ratio of the mesh
 - support for quad meshes (maybe)
 ### in the short term
-- **edge collapse :** 
+- **mesh simplification :** edge collapse
 - implementation of simple triangulation method (starting with Delaunay)
 ### in the longer term
+- retopology
 - support for 3D meshes
 
 
