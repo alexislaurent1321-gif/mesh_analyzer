@@ -26,7 +26,7 @@ To evaluate the valence of the edges (the number of triangles they belong to), w
 
 # Results
 ## Cube
-To assess the quality of the triangles, we simply try the experiment on a cube and then on a stretched cube.
+To verify that the quality of the triangles is accurately assessed, we simply try the experiment on a cube and then on a stretched cube.
 
 ### cube
 First, we check that the number of vertices, triangles, and edges matches the expected result
