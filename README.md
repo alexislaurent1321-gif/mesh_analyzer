@@ -4,16 +4,20 @@
 Start of the mesh generation project. For now, it involves evaluating the quality of a 2D triangular mesh and edge detection. This project will evolve in the coming weeks to include 2D and eventually 3D mesh generation.
 
 ## Mesh class
-This is a 2D triangular mesh class. 
+This is a 2D triangular mesh class. It contains: 
+- an `Edge` structure that checks for equality to prevent duplicates
+- an `EdgeHash` structure that combines the hashes of the vertices to form a hash for the edge
 
-### hash function
+#### hashing
 To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. For now, it is simply used to count the number of edges in the graph.
 
 
 
 ## Aspect ratio formula
 Let there be a triangle with sides a, b, and c. The formula is
-$$ \frac{abc}{(b+c-a)(c+a-b)(a+b-c)} $$
+
+$$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$
+
 A result of 1 corresponds to an equilateral triangle and it is greater than 1 by the amount that the triangle is distorted.
 
 ## Boundaries detection
@@ -56,6 +60,7 @@ The results show that all edges are detected.
 
 # Upcoming changes
 ### in the coming days
+- improvement of code structure
 - **smoothing :** use of a smoothing technique (likely Laplacian) to improve the overall aspect ratio of the mesh
 - support for quad meshes (maybe)
 ### in the short term
@@ -66,6 +71,6 @@ The results show that all edges are detected.
 - support for 3D meshes
 
 
-## Compilation and execution
+# Compilation and execution
 
 Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible.
