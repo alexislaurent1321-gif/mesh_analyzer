@@ -86,71 +86,114 @@ $(function() {
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;point.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structTriangle.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTriangle.html">Triangle</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::array&lt;int, 3&gt; v; </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;point.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structTriangle.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTriangle.html">Triangle</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::array&lt;int, 3&gt; v; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classMesh.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="classMesh.html">Mesh</a> {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Datas</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">   31</a></span>    std::vector&lt;Point&gt; <a class="code hl_variable" href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">vertices</a>;        </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">   32</a></span>    std::vector&lt;Triangle&gt; <a class="code hl_variable" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">triangles</a>;    </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">   33</a></span>    std::vector&lt;float&gt; <a class="code hl_variable" href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">ratios</a>;          </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structMesh_1_1Edge.html">   39</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">int</span> v1, v2;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a>&amp; other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">return</span> v1 == other.v1 &amp;&amp; v2 == other.v2;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classMesh.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="classMesh.html">Mesh</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Datas</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">   32</a></span>    std::vector&lt;Point&gt; <a class="code hl_variable" href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">vertices</a>;        </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">   33</a></span>    std::vector&lt;Triangle&gt; <a class="code hl_variable" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">triangles</a>;    </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">   34</a></span>    std::vector&lt;float&gt; <a class="code hl_variable" href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">ratios</a>;          </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structMesh_1_1Edge.html">   40</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordtype">int</span> v1, v2;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a>&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">return</span> v1 == other.v1 &amp;&amp; v2 == other.v2;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordtype">int</span> valence;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structMesh_1_1EdgeHash.html">   50</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structMesh_1_1EdgeHash.html">EdgeHash</a> {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordtype">size_t</span> operator()(<span class="keyword">const</span> <a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a>&amp; e)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">return</span> std::hash&lt;int&gt;{}(e.v1) ^ (std::hash&lt;int&gt;{}(e.v2) &lt;&lt; 1);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structMesh_1_1EdgeHash.html">   53</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structMesh_1_1EdgeHash.html">EdgeHash</a> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">size_t</span> operator()(<span class="keyword">const</span> <a class="code hl_struct" href="structMesh_1_1Edge.html">Edge</a>&amp; e)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">return</span> std::hash&lt;int&gt;{}(e.v1) ^ (std::hash&lt;int&gt;{}(e.v2) &lt;&lt; 1);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMesh.html#adfbd56782c0881ab15e84e988ccb2f21">countUniqueEdges</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// Geometry</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classMesh.html#a26955bacd937606838cdc15cbe40e717">calculateAspectRatio</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTriangle.html">Triangle</a>&amp; t) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a21f697301a3b654302f4541f9f856ab6">calculateAspectRatios</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a72e5799cfca3db4b75390222190d0890">analyzeMesh</a>();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classMesh.html#a4649f59edc11eeaaf59daa770ea0c7fc">loadObj</a>(<span class="keyword">const</span> std::string&amp; path, <a class="code hl_class" href="classMesh.html">Mesh</a>&amp; myMesh);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMesh.html#adfbd56782c0881ab15e84e988ccb2f21">countUniqueEdges</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// Geometry</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classMesh.html#a26955bacd937606838cdc15cbe40e717">calculateAspectRatio</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTriangle.html">Triangle</a>&amp; t) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a21f697301a3b654302f4541f9f856ab6">calculateAspectRatios</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a72e5799cfca3db4b75390222190d0890">analyzeMesh</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classMesh.html#a3682437e3218ed43fa1f63fad796225e">loadObj</a>(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classMesh.html#ad60c2eef2ae7c6e6f9db27d865eefec9">  107</a></span>    std::vector&lt;Edge&gt; <a class="code hl_function" href="classMesh.html#ad60c2eef2ae7c6e6f9db27d865eefec9">getBoundaryEdges</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        std::unordered_set&lt;Edge, EdgeHash&gt; counts;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; t : <a class="code hl_variable" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">triangles</a>) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordtype">int</span> v1 = t.v[i];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordtype">int</span> v2 = t.v[(i + 1) % 3];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                counts.insert({std::min(v1, v2), std::max(v1, v2)});</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="comment">// Edges that appear only once are boundary edges</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        std::vector&lt;Edge&gt; boundaries;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span>&amp; edge : counts) </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            boundaries.push_back(edge);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> boundaries;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
 </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassMesh_html"><div class="ttname"><a href="classMesh.html">Mesh</a></div><div class="ttdoc">A class representing a 3D mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:28</div></div>
-<div class="ttc" id="aclassMesh_html_a08a97a2d8eaec882bfa11849646cb712"><div class="ttname"><a href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">Mesh::ratios</a></div><div class="ttdeci">std::vector&lt; float &gt; ratios</div><div class="ttdoc">aspect ratios of triangles (for quality analysis)</div><div class="ttdef"><b>Definition</b> mesh.h:33</div></div>
-<div class="ttc" id="aclassMesh_html_a0ea7dea37924ad4fb3ac9682641df291"><div class="ttname"><a href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">Mesh::vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; vertices</div><div class="ttdoc">List of vertices in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:31</div></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">// Get the valence of each edge (number of triangles sharing the edge)</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    std::unordered_map&lt;Mesh::Edge, int, Mesh::EdgeHash&gt; getEdgeValences()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        std::unordered_map&lt;Edge, int, EdgeHash&gt; counts;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; t : <a class="code hl_variable" href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">triangles</a>) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                Edge e = {std::min(t.v[i], t.v[(i + 1) % 3]), </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                        std::max(t.v[i], t.v[(i + 1) % 3])};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                counts[e]++;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">return</span> counts;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>};</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassMesh_html"><div class="ttname"><a href="classMesh.html">Mesh</a></div><div class="ttdoc">A class representing a 3D mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:29</div></div>
+<div class="ttc" id="aclassMesh_html_a08a97a2d8eaec882bfa11849646cb712"><div class="ttname"><a href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">Mesh::ratios</a></div><div class="ttdeci">std::vector&lt; float &gt; ratios</div><div class="ttdoc">aspect ratios of triangles (for quality analysis)</div><div class="ttdef"><b>Definition</b> mesh.h:34</div></div>
+<div class="ttc" id="aclassMesh_html_a0ea7dea37924ad4fb3ac9682641df291"><div class="ttname"><a href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">Mesh::vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; vertices</div><div class="ttdoc">List of vertices in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:32</div></div>
 <div class="ttc" id="aclassMesh_html_a21f697301a3b654302f4541f9f856ab6"><div class="ttname"><a href="classMesh.html#a21f697301a3b654302f4541f9f856ab6">Mesh::calculateAspectRatios</a></div><div class="ttdeci">void calculateAspectRatios()</div><div class="ttdoc">Calculate the aspect ratio for all triangles in the mesh and store them in the ratios vector.</div><div class="ttdef"><b>Definition</b> mesh.cpp:30</div></div>
 <div class="ttc" id="aclassMesh_html_a26955bacd937606838cdc15cbe40e717"><div class="ttname"><a href="classMesh.html#a26955bacd937606838cdc15cbe40e717">Mesh::calculateAspectRatio</a></div><div class="ttdeci">float calculateAspectRatio(const Triangle &amp;t) const</div><div class="ttdoc">Calculate the aspect ratio of a triangle defined by its vertex indices. An aspect ratio near to 1 ind...</div><div class="ttdef"><b>Definition</b> mesh.cpp:21</div></div>
-<div class="ttc" id="aclassMesh_html_a4649f59edc11eeaaf59daa770ea0c7fc"><div class="ttname"><a href="classMesh.html#a4649f59edc11eeaaf59daa770ea0c7fc">Mesh::loadObj</a></div><div class="ttdeci">bool loadObj(const std::string &amp;path, Mesh &amp;myMesh)</div><div class="ttdoc">Load a mesh from an OBJ file using tinyobjloader.</div><div class="ttdef"><b>Definition</b> mesh.cpp:47</div></div>
+<div class="ttc" id="aclassMesh_html_a3682437e3218ed43fa1f63fad796225e"><div class="ttname"><a href="classMesh.html#a3682437e3218ed43fa1f63fad796225e">Mesh::loadObj</a></div><div class="ttdeci">bool loadObj(const std::string &amp;path)</div><div class="ttdoc">Load a mesh from an OBJ file using tinyobjloader.</div><div class="ttdef"><b>Definition</b> mesh.cpp:48</div></div>
 <div class="ttc" id="aclassMesh_html_a72e5799cfca3db4b75390222190d0890"><div class="ttname"><a href="classMesh.html#a72e5799cfca3db4b75390222190d0890">Mesh::analyzeMesh</a></div><div class="ttdeci">void analyzeMesh()</div><div class="ttdoc">Analyze the mesh by printing out the number of vertices, triangles, and unique edges....</div><div class="ttdef"><b>Definition</b> mesh.cpp:37</div></div>
-<div class="ttc" id="aclassMesh_html_acd19d61e90f1e48905bf53b36ee229f2"><div class="ttname"><a href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">Mesh::triangles</a></div><div class="ttdeci">std::vector&lt; Triangle &gt; triangles</div><div class="ttdoc">List of triangles defined by vertex indices.</div><div class="ttdef"><b>Definition</b> mesh.h:32</div></div>
+<div class="ttc" id="aclassMesh_html_acd19d61e90f1e48905bf53b36ee229f2"><div class="ttname"><a href="classMesh.html#acd19d61e90f1e48905bf53b36ee229f2">Mesh::triangles</a></div><div class="ttdeci">std::vector&lt; Triangle &gt; triangles</div><div class="ttdoc">List of triangles defined by vertex indices.</div><div class="ttdef"><b>Definition</b> mesh.h:33</div></div>
+<div class="ttc" id="aclassMesh_html_ad60c2eef2ae7c6e6f9db27d865eefec9"><div class="ttname"><a href="classMesh.html#ad60c2eef2ae7c6e6f9db27d865eefec9">Mesh::getBoundaryEdges</a></div><div class="ttdeci">std::vector&lt; Edge &gt; getBoundaryEdges() const</div><div class="ttdoc">Get the boundary edges of the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:107</div></div>
 <div class="ttc" id="aclassMesh_html_adfbd56782c0881ab15e84e988ccb2f21"><div class="ttname"><a href="classMesh.html#adfbd56782c0881ab15e84e988ccb2f21">Mesh::countUniqueEdges</a></div><div class="ttdeci">size_t countUniqueEdges() const</div><div class="ttdoc">Count the number of unique edges in the mesh by iterating through all triangles and adding their edge...</div><div class="ttdef"><b>Definition</b> mesh.cpp:9</div></div>
-<div class="ttc" id="astructMesh_1_1EdgeHash_html"><div class="ttname"><a href="structMesh_1_1EdgeHash.html">Mesh::EdgeHash</a></div><div class="ttdoc">A hash function for the Edge struct to allow it to be used in an unordered_set.</div><div class="ttdef"><b>Definition</b> mesh.h:50</div></div>
-<div class="ttc" id="astructMesh_1_1Edge_html"><div class="ttname"><a href="structMesh_1_1Edge.html">Mesh::Edge</a></div><div class="ttdoc">A struct representing an edge in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:39</div></div>
-<div class="ttc" id="astructTriangle_html"><div class="ttname"><a href="structTriangle.html">Triangle</a></div><div class="ttdoc">A struct representing a triangle in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:20</div></div>
+<div class="ttc" id="astructMesh_1_1EdgeHash_html"><div class="ttname"><a href="structMesh_1_1EdgeHash.html">Mesh::EdgeHash</a></div><div class="ttdoc">A hash function for the Edge struct to allow it to be used in an unordered_set.</div><div class="ttdef"><b>Definition</b> mesh.h:53</div></div>
+<div class="ttc" id="astructMesh_1_1Edge_html"><div class="ttname"><a href="structMesh_1_1Edge.html">Mesh::Edge</a></div><div class="ttdoc">A struct representing an edge in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:40</div></div>
+<div class="ttc" id="astructTriangle_html"><div class="ttname"><a href="structTriangle.html">Triangle</a></div><div class="ttdoc">A struct representing a triangle in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

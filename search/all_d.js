@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['shape_5ft_0',['shape_t',['../structtinyobj_1_1shape__t.html',1,'tinyobj']]],
-  ['short_20term_1',['in the short term',['../index.html#autotoc_md10',1,'']]],
-  ['skin_5fweight_5ft_2',['skin_weight_t',['../structtinyobj_1_1skin__weight__t.html',1,'tinyobj']]],
-  ['stretched_20cube_3',['stretched cube',['../index.html#autotoc_md7',1,'']]]
+  ['ratio_20formula_0',['Aspect ratio formula',['../index.html#autotoc_md3',1,'']]],
+  ['ratios_1',['ratios',['../classMesh.html#a08a97a2d8eaec882bfa11849646cb712',1,'Mesh']]],
+  ['results_2',['Results',['../index.html#autotoc_md4',1,'']]]
 ];
