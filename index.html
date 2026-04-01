@@ -87,12 +87,15 @@ hash function</h3>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Aspect ratio formula</h2>
 <p>Let there be a triangle with sides a, b, and c. The formula is $$ \frac{abc}{(b+c-a)(c+a-b)(a+b-c)} $$ A result of 1 corresponds to an equilateral triangle and it is greater than 1 by the amount that the triangle is distorted.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Boundaries detection</h2>
+<p>Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Results</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Cube</h2>
 <p>To assess the quality of the triangles, we simply try the experiment on a cube and then on a stretched cube.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 cube</h3>
 <p>First, we check that the number of vertices, triangles, and edges matches the expected result </p><div class="fragment"><div class="line">Vertices : 8</div>
 <div class="line">Triangles : 12</div>
@@ -102,32 +105,35 @@ cube</h3>
 <div class="line">max aspect ratio : 1.20711</div>
 <div class="line">mean aspect ratio : 1.20711</div>
 </div><!-- fragment --><p> <img src="https://github.com/user-attachments/assets/aeea27de-0dd5-40a6-b300-3f0f8b586e1b" alt="cube_ratios" width="600" height="300" class="inline"/></p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 stretched cube</h3>
 <p>In this configuration, the height along the z-axis is doubled : </p><div class="fragment"><div class="line">min aspect ratio : 1.20711</div>
 <div class="line">max aspect ratio : 1.46353</div>
 <div class="line">mean aspect ratio : 1.37805</div>
 </div><!-- fragment --><p> We make sure that we get a higher value on the side faces, since the triangles are more stretched : <img src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" alt="cube2_ratios" width="600" height="300" class="inline"/></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Boudaries detection</h2>
+<p><img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" class="inline"/></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Upcoming changes</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 in the coming days</h3>
 <ul>
 <li>support for quad meshes</li>
 <li>domain boundary detection </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 in the short term</h3>
 <ul>
 <li>implementation of triangulation methods (starting with Delaunay) </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 in the longer term</h3>
 <ul>
 <li></li>
 <li>support for 3D meshes</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Compilation and execution</h2>
 <p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible. </p>
 </div></div><!-- PageDoc -->

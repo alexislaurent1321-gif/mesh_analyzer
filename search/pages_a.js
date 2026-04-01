@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['short_20term_0',['in the short term',['../index.html#autotoc_md10',1,'']]],
-  ['stretched_20cube_1',['stretched cube',['../index.html#autotoc_md7',1,'']]]
+  ['ratio_20formula_0',['Aspect ratio formula',['../index.html#autotoc_md3',1,'']]],
+  ['results_1',['Results',['../index.html#autotoc_md5',1,'']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['edge_0',['Edge',['../structMesh_1_1Edge.html',1,'Mesh']]],
-  ['edgehash_1',['EdgeHash',['../structMesh_1_1EdgeHash.html',1,'Mesh']]],
-  ['error_2',['Error',['../classtinyobj_1_1ObjReader.html#a7f1029f8dfac167a65dae98e7837b611',1,'tinyobj::ObjReader']]],
-  ['execution_3',['Compilation and execution',['../index.html#autotoc_md12',1,'']]],
-  ['exporttovtk_4',['exportToVTK',['../classMesh.html#a09103c2489001262e0159e61861aaafe',1,'Mesh']]]
+  ['days_0',['in the coming days',['../index.html#autotoc_md11',1,'']]],
+  ['detection_1',['detection',['../index.html#autotoc_md9',1,'Boudaries detection'],['../index.html#autotoc_md4',1,'Boundaries detection']]],
+  ['distance_2',['distance',['../structPoint.html#a0d86d1c1e7a6202483fd83ddd065e14f',1,'Point']]]
 ];

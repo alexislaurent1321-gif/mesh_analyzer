@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['joint_5fand_5fweight_5ft_0',['joint_and_weight_t',['../structtinyobj_1_1joint__and__weight__t.html',1,'tinyobj']]]
+  ['in_20the_20coming_20days_0',['in the coming days',['../index.html#autotoc_md11',1,'']]],
+  ['in_20the_20longer_20term_1',['in the longer term',['../index.html#autotoc_md13',1,'']]],
+  ['in_20the_20short_20term_2',['in the short term',['../index.html#autotoc_md12',1,'']]],
+  ['index_5ft_3',['index_t',['../structtinyobj_1_1index__t.html',1,'tinyobj']]]
 ];
