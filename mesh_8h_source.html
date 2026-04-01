@@ -149,16 +149,12 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    std::vector&lt;Edge&gt; <a class="code hl_function" href="classMesh.html#a881a3557d22ac4fe200e8f8c417f550f">getBoundaryEdges</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a09103c2489001262e0159e61861aaafe">exportToVTK</a>(<span class="keyword">const</span> std::string&amp; filename) <span class="keyword">const</span>;   </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>};</div>
 </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassMesh_html"><div class="ttname"><a href="classMesh.html">Mesh</a></div><div class="ttdoc">A class representing a 3D mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:29</div></div>
 <div class="ttc" id="aclassMesh_html_a08a97a2d8eaec882bfa11849646cb712"><div class="ttname"><a href="classMesh.html#a08a97a2d8eaec882bfa11849646cb712">Mesh::ratios</a></div><div class="ttdeci">std::vector&lt; float &gt; ratios</div><div class="ttdoc">aspect ratios of triangles (for quality analysis)</div><div class="ttdef"><b>Definition</b> mesh.h:34</div></div>
-<div class="ttc" id="aclassMesh_html_a09103c2489001262e0159e61861aaafe"><div class="ttname"><a href="classMesh.html#a09103c2489001262e0159e61861aaafe">Mesh::exportToVTK</a></div><div class="ttdeci">void exportToVTK(const std::string &amp;filename) const</div><div class="ttdoc">Convertion to VTK format for visualization in Paraview.</div><div class="ttdef"><b>Definition</b> mesh_exportToVTK.cpp:3</div></div>
 <div class="ttc" id="aclassMesh_html_a0ea7dea37924ad4fb3ac9682641df291"><div class="ttname"><a href="classMesh.html#a0ea7dea37924ad4fb3ac9682641df291">Mesh::vertices</a></div><div class="ttdeci">std::vector&lt; Point &gt; vertices</div><div class="ttdoc">List of vertices in the mesh.</div><div class="ttdef"><b>Definition</b> mesh.h:32</div></div>
 <div class="ttc" id="aclassMesh_html_a21f697301a3b654302f4541f9f856ab6"><div class="ttname"><a href="classMesh.html#a21f697301a3b654302f4541f9f856ab6">Mesh::calculateAspectRatios</a></div><div class="ttdeci">void calculateAspectRatios()</div><div class="ttdoc">Calculate the aspect ratio for all triangles in the mesh and store them in the ratios vector.</div><div class="ttdef"><b>Definition</b> mesh.cpp:39</div></div>
 <div class="ttc" id="aclassMesh_html_a26955bacd937606838cdc15cbe40e717"><div class="ttname"><a href="classMesh.html#a26955bacd937606838cdc15cbe40e717">Mesh::calculateAspectRatio</a></div><div class="ttdeci">float calculateAspectRatio(const Triangle &amp;t) const</div><div class="ttdoc">Calculate the aspect ratio of a triangle defined by its vertex indices. An aspect ratio near to 1 ind...</div><div class="ttdef"><b>Definition</b> mesh.cpp:26</div></div>

@@ -110,8 +110,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>analyzeMesh</b> ()</t
 <tr class="memdesc:a43a5cc7770352cbc4c5d22c6c1096aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="structMesh_1_1Edge.html" title="A struct representing an edge in the mesh.">Edge</a> Valences object.  <br /></td></tr>
 <tr class="memitem:a881a3557d22ac4fe200e8f8c417f550f" id="r_a881a3557d22ac4fe200e8f8c417f550f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structMesh_1_1Edge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a881a3557d22ac4fe200e8f8c417f550f">getBoundaryEdges</a> () const</td></tr>
 <tr class="memdesc:a881a3557d22ac4fe200e8f8c417f550f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary edges of the mesh.  <br /></td></tr>
-<tr class="memitem:a09103c2489001262e0159e61861aaafe" id="r_a09103c2489001262e0159e61861aaafe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09103c2489001262e0159e61861aaafe">exportToVTK</a> (const std::string &amp;filename) const</td></tr>
-<tr class="memdesc:a09103c2489001262e0159e61861aaafe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertion to VTK format for visualization in Paraview.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -171,31 +169,6 @@ std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b
 
 <p>Count the number of unique edges in the mesh by iterating through all triangles and adding their edges to an unordered_set. </p>
 <dl class="section return"><dt>Returns</dt><dd>number of unique edges in the mesh </dd></dl>
-
-</div>
-</div>
-<a id="a09103c2489001262e0159e61861aaafe" name="a09103c2489001262e0159e61861aaafe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09103c2489001262e0159e61861aaafe">&#9670;&#160;</a></span>exportToVTK()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Mesh::exportToVTK </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convertion to VTK format for visualization in Paraview. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -270,7 +243,6 @@ false </dd></dl>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="mesh_8h_source.html">mesh.h</a></li>
 <li>src/<b>mesh.cpp</b></li>
-<li>src/<b>mesh_exportToVTK.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
