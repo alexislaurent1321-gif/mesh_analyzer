@@ -74,7 +74,7 @@ $(function() {
   <div class="headertitle"><div class="title">Mesh_analyzer </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://alexislaurent1321-gif.github.io/mesh_evaluation/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://alexislaurent1321-gif.github.io/mesh_analyzer/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 Mesh analyzer</h1>
 <p>Start of the mesh generation project. For now, it involves evaluating the quality of a 2D triangular mesh and edge detection. This project will evolve in the coming weeks to include 2D and eventually 3D mesh generation.</p>
@@ -86,12 +86,15 @@ Mesh class</h2>
 </ul>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 hashing</h4>
-<p>To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. For now, it is simply used to count the number of edges in the graph.</p>
+<p>To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. This method involves using a <span class="tt">std::unordered_set</span> structure with a custom hash function to identify unique edges with an average time complexity of $O(1)$.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Aspect ratio formula</h2>
 <p>Let there be a triangle with sides a, b, and c. The formula is</p>
 <p>$$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$</p>
-<p>A result of 1 corresponds to an equilateral triangle and it is greater than 1 by the amount that the triangle is distorted.</p>
+<ul>
+<li>A ratio of 1 corresponds to a perfect equilateral triangle.</li>
+<li>The higher the ratio, the more distorted the triangle becomes, which can hinder the convergence of the solvers.</li>
+</ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Boundaries detection</h2>
 <p>Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle.</p>
@@ -109,22 +112,26 @@ cube</h3>
 <div class="fragment"><div class="line">min aspect ratio : 1.20711</div>
 <div class="line">max aspect ratio : 1.20711</div>
 <div class="line">mean aspect ratio : 1.20711</div>
-</div><!-- fragment --><p> <img src="https://github.com/user-attachments/assets/aeea27de-0dd5-40a6-b300-3f0f8b586e1b" alt="cube_ratios" width="600" height="300" class="inline"/></p>
+</div><!-- fragment --><p><img src="https://github.com/user-attachments/assets/aeea27de-0dd5-40a6-b300-3f0f8b586e1b" alt="cube_ratios" width="600" height="300" class="inline"/></p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 stretched cube</h3>
 <p>In this configuration, the height along the z-axis is doubled : </p><div class="fragment"><div class="line">min aspect ratio : 1.20711</div>
 <div class="line">max aspect ratio : 1.46353</div>
 <div class="line">mean aspect ratio : 1.37805</div>
-</div><!-- fragment --><p> We make sure that we get a higher value on the side faces, since the triangles are more stretched : <img src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" alt="cube2_ratios" width="600" height="300" class="inline"/></p>
+</div><!-- fragment --><p> We make sure that we get a higher value on the side faces, since the triangles are more stretched :</p>
+<p><img src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" alt="cube2_ratios" width="600" height="300" class="inline"/></p>
+<p>On the stretched cube, the tool correctly detects the increase in the aspect ratio on the side faces (1.463).</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Boudaries detection</h2>
-<p>The example used here is a hemisphere with some missing faces. Part of the edge, as well as two triangles sharing a common vertex, have been removed. \ <img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" class="inline"/> \ The results show that all edges are detected.</p>
+<p>The example used here is a hemisphere with some missing faces. Part of the edge, as well as two triangles sharing a common vertex, have been removed.</p>
+<p><img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" class="inline"/></p>
+<p>The results show that all edges are detected.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Upcoming changes</h1>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 in the coming days</h3>
 <ul>
-<li><b>smoothing :</b> use of a smoothing technique (likely Laplacian) to improve the overall aspect ratio of the mesh</li>
+<li><b>smoothing :</b> Implementation of Laplacian smoothing to improve mesh uniformity</li>
 <li>support for quad meshes (maybe) </li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
