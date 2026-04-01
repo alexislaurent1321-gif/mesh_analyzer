@@ -113,14 +113,6 @@ public:
      * @return A vector containing the boundary edges
      */
     std::vector<Edge> getBoundaryEdges() const;
-
-
-    /**
-     * @brief Convertion to VTK format for visualization in Paraview
-     * 
-     * @param filename 
-     */
-    void exportToVTK(const std::string& filename) const;   
 };
 
 #endif
