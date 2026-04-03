@@ -26,7 +26,13 @@ Another function of this project is to detect the edges of the mesh if it is ope
 To evaluate the valence of the edges (the number of triangles they belong to), we create a `std::unordered_map` that stores integers as values and edges as keys. We iterate through the edges of each triangle and increment the value corresponding to the evaluated edge by 1.
 
 ## Smoothing
-A useful method for improving the regularity of a mesh is to apply smoothing. ...
+A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$. 
+
+$$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$
+
+if $\lambda = 1$, the new position corresponds simply to the mean of neighbourghs' positions : 
+
+$$v_i \longleftarrow \frac{1}{N_i}\sum_{j=1}^{N_i} v_j$$
 
 
 # Results
@@ -88,5 +94,5 @@ using Edge Collapse](https://arxiv.org/pdf/2512.19959))
 Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible.
 
 ### Dependencies
-- `tinyobjloader` (included in the code)
-- `ParaView`
+- [tinyobjloader](https://github.com/tinyobjloader/tinyobjloader) (included in the code)
+- [ParaView](https://www.paraview.org/)
