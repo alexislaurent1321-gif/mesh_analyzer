@@ -128,3 +128,27 @@ std::vector<Mesh::Edge> Mesh::getBoundaryEdges() const {
     
     return boundaryEdges;
 }
+
+
+void Mesh::smooth(int iterations, float lambda){
+        
+    std::unordered_map<int, std::unordered_set<int>> adjacency;
+    for (const auto& triangle : triangles) {
+        adjacency[triangle.v[0]].insert({triangle.v[1], triangle.v[2]});
+        adjacency[triangle.v[1]].insert({triangle.v[0], triangle.v[2]});
+        adjacency[triangle.v[2]].insert({triangle.v[0], triangle.v[1]});
+    }
+
+    std::vector<Point> nextPositions = vertices;
+    for (int i = 0; i < vertices.size(); ++i) {
+
+        Point centroid = {0, 0, 0};
+        for (int neighborIdx : adjacency[i]) {
+            centroid += vertices[neighborIdx];
+        }
+        centroid /= adjacency[i].size();
+        
+        // Update the vertex position by moving it towards the centroid of its neighbors
+        nextPositions[i] = vertices[i] + (centroid - vertices[i]) * lambda;
+    }
+}
