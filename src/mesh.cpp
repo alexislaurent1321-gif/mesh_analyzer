@@ -151,4 +151,6 @@ void Mesh::smooth(int iterations, float lambda){
         // Update the vertex position by moving it towards the centroid of its neighbors
         nextPositions[i] = vertices[i] + (centroid - vertices[i]) * lambda;
     }
+
+    vertices = nextPositions; // Update the vertex positions after smoothing
 }

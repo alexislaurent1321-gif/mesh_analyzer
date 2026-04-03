@@ -13,10 +13,13 @@ int main() {
         return 1;
     }
 
+    mesh.smooth(10000000, 1.f); 
     mesh.analyzeMesh();
 
     std::cout << "Exporting mesh to VTK format..." << std::endl;
     exportToVTK("output.vtk", mesh);
+
+
     
     return 0;
 }
