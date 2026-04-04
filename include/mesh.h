@@ -120,6 +120,9 @@ public:
      * @param lambda Smoothing parameter (0 < lambda < 1)
      */
     void smooth(int iterations, float lambda);
+
+
+    
 };
 
 #endif
