@@ -26,10 +26,10 @@ bool Delaunay::isPointInCircumcircle(const Triangle& triangle, const Point& P) {
 
 Triangle Delaunay::createSuperTriangle() {
     // Create a super-triangle that encompasses all vertices in the mesh
-    float minX = std::numeric_limits<float>::max();
-    float minY = std::numeric_limits<float>::max();
-    float maxX = std::numeric_limits<float>::lowest();
-    float maxY = std::numeric_limits<float>::lowest();
+    float minX = std::numeric_limits<float>::lowest();
+    float minY = std::numeric_limits<float>::lowest();
+    float maxX = std::numeric_limits<float>::max();
+    float maxY = std::numeric_limits<float>::max();
 
     for (const auto& vertex : mesh.vertices) {
         minX = std::min(minX, vertex.x);

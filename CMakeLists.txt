@@ -8,6 +8,8 @@ add_executable(mesh_analyzer
     src/geometry/point.cpp
     src/geometry/mesh.cpp
     src/visualization/exportToVTK.cpp
+    src/mesh_generation/basic_shapes.cpp
+    src/mesh_generation/triangulation.cpp
     src/main.cpp
 )
 

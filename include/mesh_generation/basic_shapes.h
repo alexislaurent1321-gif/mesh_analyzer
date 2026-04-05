@@ -2,8 +2,10 @@
 
 /** 
  * @brief Generate a grid of vertices
- * @param mesh The mesh to populate
- * @param width The width of the grid
- * @param height The height of the grid
+ * @param mesh The mesh to populate with vertices
+ * @param Nx Number of vertices in the x-direction
+ * @param Ny Number of vertices in the y-direction
+ * @param Lx The length of the grid in the x-direction
+ * @param Ly The length of the grid in the y-direction
  */
-void generateGrid(Mesh& mesh, int width, int height);
+void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly);
