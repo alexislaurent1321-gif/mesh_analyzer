@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['point_0',['Point',['../structPoint.html',1,'']]],
-  ['points_5ft_1',['points_t',['../structtinyobj_1_1points__t.html',1,'tinyobj']]]
+  ['objreader_0',['ObjReader',['../classtinyobj_1_1ObjReader.html',1,'tinyobj']]],
+  ['objreaderconfig_1',['ObjReaderConfig',['../structtinyobj_1_1ObjReaderConfig.html',1,'tinyobj']]]
 ];

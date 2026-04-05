@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../classtinyobj_1_1ObjReader.html#a74f64d9964657f297b12c51110745a38',1,'tinyobj::ObjReader']]]
+  ['triangulate_0',['triangulate',['../classDelaunay.html#abef0bcb6a7d3cd478299a88faf6af767',1,'Delaunay']]]
 ];

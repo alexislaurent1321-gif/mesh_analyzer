@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mtl_5fsearch_5fpath_0',['mtl_search_path',['../structtinyobj_1_1ObjReaderConfig.html#aff3620e91b88583d1eb7747079941b65',1,'tinyobj::ObjReaderConfig']]]
+  ['isbad_0',['isBad',['../structTriangle.html#a49711253a6946c5ce7e3350bab253d59',1,'Triangle']]]
 ];

@@ -72,6 +72,7 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structTriangle-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Triangle Struct Reference</div></div>
@@ -81,17 +82,50 @@ $(function() {
 <p>A struct representing a triangle in the mesh.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="mesh_8h_source.html">mesh.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="triangle_8h_source.html">triangle.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5971f999cac7015aae6b42920600adfc" id="r_a5971f999cac7015aae6b42920600adfc"><td class="memItemLeft" align="right" valign="top"><a id="a5971f999cac7015aae6b42920600adfc" name="a5971f999cac7015aae6b42920600adfc"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>containsEdge</b> (int v1, int v2) const</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a468724bd0e5bb6188788516df43d61cf" id="r_a468724bd0e5bb6188788516df43d61cf"><td class="memItemLeft" align="right" valign="top"><a id="a468724bd0e5bb6188788516df43d61cf" name="a468724bd0e5bb6188788516df43d61cf"></a>
 std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>v</b></td></tr>
+<tr class="memdesc:a468724bd0e5bb6188788516df43d61cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the vertices that form the triangle. <br /></td></tr>
+<tr class="memitem:a49711253a6946c5ce7e3350bab253d59" id="r_a49711253a6946c5ce7e3350bab253d59"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49711253a6946c5ce7e3350bab253d59">isBad</a> = false</td></tr>
+<tr class="memdesc:a49711253a6946c5ce7e3350bab253d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag used in <a class="el" href="classDelaunay.html" title="Class for performing Delaunay triangulation.">Delaunay</a> triangulation to mark triangles that need to be removed.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct representing a triangle in the mesh. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="mesh_8h_source.html">mesh.h</a></li>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a49711253a6946c5ce7e3350bab253d59" name="a49711253a6946c5ce7e3350bab253d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49711253a6946c5ce7e3350bab253d59">&#9670;&#160;</a></span>isBad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Triangle::isBad = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flag used in <a class="el" href="classDelaunay.html" title="Class for performing Delaunay triangulation.">Delaunay</a> triangulation to mark triangles that need to be removed. </p>
+<p>brief Check if the triangle contains a specific edge </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td>index of the first vertex of the edge </td></tr>
+    <tr><td class="paramname">v2</td><td>index of the second vertex of the edge </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>include/geometry/<a class="el" href="triangle_8h_source.html">triangle.h</a></li>
+<li>src/geometry/<b>triangle.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

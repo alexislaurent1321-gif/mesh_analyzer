@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parsefromfile_0',['ParseFromFile',['../classtinyobj_1_1ObjReader.html#a2aff0b5142ad265dc9fa276064f69700',1,'tinyobj::ObjReader']]],
-  ['parsefromstring_1',['ParseFromString',['../classtinyobj_1_1ObjReader.html#a89a253a20fdf22305b068143cc58dfce',1,'tinyobj::ObjReader']]],
-  ['point_2',['Point',['../structPoint.html#ad92f2337b839a94ce97dcdb439b4325a',1,'Point::Point()'],['../structPoint.html#ad56008741db728440b3d469e5fb5cc82',1,'Point::Point(float x_, float y_, float z_)']]]
+  ['length_0',['length',['../structPoint.html#ae50b05be952e97997e400b479b5ce671',1,'Point']]],
+  ['loadobj_1',['loadObj',['../classMesh.html#a3682437e3218ed43fa1f63fad796225e',1,'Mesh']]]
 ];
