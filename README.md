@@ -3,11 +3,16 @@
 # Mesh analyzer
 Start of the mesh generation project. For now, it involves evaluating the quality of a 2D triangular mesh and edge detection. This project will evolve in the coming weeks to include 2D and eventually 3D mesh generation.
 
-## Mesh class
-This is a 2D triangular mesh class. It contains: 
-- an `Edge` structure that checks for equality to prevent duplicates
-- an `EdgeHash` structure that combines the hashes of the vertices to form a hash for the edge
-The mesh is loaded using the `tinyobjloader` library (included in this project).
+# Project structure
+The project is organized into the following folders: 
+- **geometry :** contains classes for Point, Triangle, Mesh
+- **mesh_generation :** contains classes for generating grids or triangulate a set of vertices
+- **visualization :** contains the export in VTK format for ParaView
+
+
+
+# Features
+## Mesh analyzer
 
 #### hashing
 To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. This method involves using a `std::unordered_set` structure with a custom hash function to identify unique edges with an average time complexity of $O(1)$.
@@ -18,13 +23,20 @@ Here, an exemple for a cube :
 Vertices : 8
 Triangles : 12
 Unique edges : 18
+```
+
+#### Aspect ratio 
+
+The analyzer computes also the aspects ratio of triangles : 
+```bash
 min aspect ratio : 1.20711
 max aspect ratio : 1.20711
 mean aspect ratio : 1.20711
 ```
+
 The triangles that make up a cube are isosceles-right triangles, which corresponds to an aspect ratio of $\simeq 1.2$.
 
-## Aspect ratio formula
+
 Let there be a triangle with sides a, b, and c. The formula is
 
 $$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$
@@ -68,8 +80,18 @@ Here is an example of a cube with $\lambda=1$ and $10$ iterations :
 <img width="1209" height="600" alt="cube_smooth" src="https://github.com/user-attachments/assets/aac01706-2f8b-4704-a0aa-ee5772952bb7" style="width:50%;" />
 
 ## Delaunay triangulation
-
-
+The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. 
+### Test on a regular grid
+To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ grid : 
+```
+Vertices : 25
+Triangles : 32
+Unique edges : 56
+min aspect ratio : 1.20711
+max aspect ratio : 1.20711
+mean aspect ratio : 1.20711
+```
+The results are correct
 
 
 # Upcoming changes
