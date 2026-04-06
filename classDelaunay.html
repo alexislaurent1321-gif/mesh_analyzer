@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a57eeffddca46639f7db2a836bcf3b8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a super-triangle that encompasses all vertices in the mesh.  <br /></td></tr>
 <tr class="memitem:a8fa8f652b28b90d4cf7dd7131eb2ee3a" id="r_a8fa8f652b28b90d4cf7dd7131eb2ee3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fa8f652b28b90d4cf7dd7131eb2ee3a">addPoint</a> (const <a class="el" href="structPoint.html">Point</a> &amp;point)</td></tr>
 <tr class="memdesc:a8fa8f652b28b90d4cf7dd7131eb2ee3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a point to the triangulation and update the mesh accordingly.  <br /></td></tr>
+<tr class="memitem:a5aec4c0de4a8690deca69731635d44c1" id="r_a5aec4c0de4a8690deca69731635d44c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aec4c0de4a8690deca69731635d44c1">cleanup</a> (<a class="el" href="structTriangle.html">Triangle</a> superTriangle)</td></tr>
+<tr class="memdesc:a5aec4c0de4a8690deca69731635d44c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean up the mesh by removing triangles that include the vertices of the super-triangle.  <br /></td></tr>
 <tr class="memitem:abef0bcb6a7d3cd478299a88faf6af767" id="r_abef0bcb6a7d3cd478299a88faf6af767"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTriangle.html">Triangle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abef0bcb6a7d3cd478299a88faf6af767">triangulate</a> ()</td></tr>
 <tr class="memdesc:abef0bcb6a7d3cd478299a88faf6af767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform <a class="el" href="classDelaunay.html" title="Class for performing Delaunay triangulation.">Delaunay</a> triangulation on the current set of vertices in the mesh.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -122,6 +124,31 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">point</td><td>The point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5aec4c0de4a8690deca69731635d44c1" name="a5aec4c0de4a8690deca69731635d44c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aec4c0de4a8690deca69731635d44c1">&#9670;&#160;</a></span>cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Delaunay::cleanup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTriangle.html">Triangle</a></td>          <td class="paramname"><span class="paramname"><em>superTriangle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clean up the mesh by removing triangles that include the vertices of the super-triangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">superTriangle</td><td>The super-triangle </td></tr>
   </table>
   </dd>
 </dl>
