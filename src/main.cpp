@@ -8,29 +8,37 @@
 // Main function to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality
 int main() {
     
-    // Mesh mesh;
 
-    // if (!mesh.loadObj("models/cube_high_res.obj")) {
-    //     std::cerr << "Error loading OBJ file." << std::endl;
-    //     return 1;
-    // }
+    // Mesh Analyzer
 
-    // mesh.smooth(10, 1.f); 
-    // mesh.analyzeMesh();
+    Mesh mesh;
 
-    // std::cout << "Exporting mesh to VTK format..." << std::endl;
-    // exportToVTK("output.vtk", mesh);
+    if (!mesh.loadObj("models/cube_high_res.obj")) {
+        std::cerr << "Error loading OBJ file." << std::endl;
+        return 1;
+    }
 
-    // Example of generating a grid mesh and exporting it
-    Mesh gridMesh;
-    generateGrid(gridMesh, 5, 5, 1.f, 1.f);
+    mesh.smooth(10, 1.f);   // Optional: Smooth 
+    
+    mesh.analyzeMesh();
 
-    Delaunay delaunay;
-    delaunay.mesh = gridMesh;
-    delaunay.mesh.triangles = delaunay.triangulate();
+    std::cout << "Exporting mesh to VTK format..." << std::endl;
+    exportToVTK("output.vtk", mesh);
 
-    delaunay.mesh.analyzeMesh();
-    exportToVTK("output.vtk", delaunay.mesh);
+    
+
+    // Triangulation test on a grid (for now, without ParaView)
+
+    // // Example of generating a grid mesh and exporting it
+    // Mesh gridMesh;
+    // generateGrid(gridMesh, 5, 5, 1.f, 1.f);
+
+    // Delaunay delaunay;
+    // delaunay.mesh = gridMesh;
+    // delaunay.mesh.triangles = delaunay.triangulate();
+
+    // delaunay.mesh.analyzeMesh();
+    // exportToVTK("output.vtk", delaunay.mesh);
 
     
     return 0;
