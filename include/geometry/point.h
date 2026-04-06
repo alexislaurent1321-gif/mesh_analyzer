@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <vector>
 
 /**
  * @brief A struct representing a point in 3D space
@@ -56,6 +57,10 @@ struct Point {
 
     Point operator*(float scalar) const {
         return Point(x * scalar, y * scalar, z * scalar);
+    }
+
+    bool operator==(const Point& other) const {
+        return std::abs(x - other.x) < 1e-9 && std::abs(y - other.y) < 1e-9 && std::abs(z - other.z) < 1e-9;
     }
 
     void operator+=(const Point& other) {

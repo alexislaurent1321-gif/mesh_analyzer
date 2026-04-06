@@ -10,12 +10,11 @@ bool Triangle::containsEdge(int v1, int v2) const {
 
 bool Triangle::containsPoint(const std::vector<Point>& vertices,const Point& P) {
 
-    // Get the vertices of the triangle
     Point A = vertices[v[0]];
     Point B = vertices[v[1]];
     Point C = vertices[v[2]];
 
-    // Shift the points so that P is at the origin
+    // Translate points to the origin for better numerical stability
     float ax = A.x - P.x;
     float ay = A.y - P.y;
     float bx = B.x - P.x;
@@ -23,15 +22,10 @@ bool Triangle::containsPoint(const std::vector<Point>& vertices,const Point& P) 
     float cx = C.x - P.x;
     float cy = C.y - P.y;
 
-    // Calculate the determinant of the matrix formed by the shifted points
-    float det31 = ax * ax + ay * ay;
-    float det32 = bx * bx + by * by;
-    float det33 = cx * cx + cy * cy;
+    // Calculate the determinant of the matrix formed by the translated points
+    float det = (ax*ax + ay*ay) * (bx*cy - cx*by) -
+                (bx*bx + by*by) * (ax*cy - cx*ay) +
+                (cx*cx + cy*cy) * (ax*by - bx*ay);
 
-    // If the determinant is positive, P is inside the circumcircle of triangle ABC
-    float det = ax * (by * det33 - cy * det32) -
-                ay * (bx * det33 - cx * det32) +
-                det31 * (bx * cy - cx * by);
-
-    return det > 1e-9; // Use a small epsilon to account for floating-point precision issues
+    return det < -1e-5; // Use a small epsilon to account for floating-point precision issues
 }

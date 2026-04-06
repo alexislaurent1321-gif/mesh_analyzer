@@ -2,11 +2,13 @@
 
 
 Triangle Delaunay::createSuperTriangle() {
-    // Create a super-triangle that encompasses all vertices in the mesh
-    float minX, minY = std::numeric_limits<float>::max();
-    float maxX, maxY = std::numeric_limits<float>::lowest();
 
+    float minX = 1e7f;
+    float minY = 1e7f;
+    float maxX = -1e7f;
+    float maxY = -1e7f;
 
+    // Find the bounding box of the existing vertices
     for (const auto& vertex : mesh.vertices) {
         minX = std::min(minX, vertex.x);
         minY = std::min(minY, vertex.y);
@@ -14,21 +16,23 @@ Triangle Delaunay::createSuperTriangle() {
         maxY = std::max(maxY, vertex.y);
     }
 
-    float dx = maxX - minX;
-    float dy = maxY - minY;
-    float deltaMax = std::max(dx, dy) * 10; // Scale factor to ensure the super-triangle is large enough
+    float dx = (maxX - minX) * 10; // Scale factor to ensure the super-triangle is large enough
+    float dy = (maxY - minY) * 10; // Scale factor to ensure the super-triangle is large enough
 
-    Point p1 = {minX - deltaMax, minY - deltaMax};
-    Point p2 = {minX + dx / 2, maxY + deltaMax};
-    Point p3 = {maxX + deltaMax, minY - deltaMax};
+    // Define the vertices of the super-triangle
+    Point v0 = {minX - dx, minY - dy * 3};
+    Point v1 = {minX + dx, maxY + dy};
+    Point v2 = {maxX + dx * 3, minY - dy};
 
+    // Store the super-triangle vertices in the mesh and return the triangle defined by their indices
     int index1 = mesh.vertices.size();
     int index2 = mesh.vertices.size() + 1;
     int index3 = mesh.vertices.size() + 2;
 
-    mesh.vertices.push_back(p1);
-    mesh.vertices.push_back(p2);
-    mesh.vertices.push_back(p3);
+    // superTriangleVertices = {v0, v1, v2} // Store the super-triangle vertices for later cleanup
+    mesh.vertices.push_back(v0);
+    mesh.vertices.push_back(v1);
+    mesh.vertices.push_back(v2);
 
     return {index1, index2, index3};
 }
@@ -51,18 +55,26 @@ Triangle Delaunay::createSuperTriangle() {
 
     // Find the boundary of the polygonal hole created by removing the bad triangles
     std::vector<Edge> polygon;
-    for (const auto& triangle : badTriangles) {
-        Edge edges[3] = {{triangle.v[0], triangle.v[1]}, {triangle.v[1], triangle.v[2]}, {triangle.v[2], triangle.v[0]}};
-        for (auto& edge : edges) {
-            bool shared = false;
-            for (const auto& other : badTriangles) {
-                if (&triangle == &other) continue;
-                if (other.containsEdge(edge.v1, edge.v2)) {
-                    shared = true;
+    for (const auto& tri : badTriangles) {
+        
+        // Check each edge of the triangle to see if it's shared by another bad triangle
+        Edge edges[3] = { {tri.v[0], tri.v[1]}, {tri.v[1], tri.v[2]}, {tri.v[2], tri.v[0]} };
+        
+        // For each edge, check if it's shared by another bad triangle. If not, it's part of the polygon boundary
+        for (const auto& edge : edges) {
+            bool isShared = false;  // Check if this edge is shared by another bad triangle
+            for (const auto& otherTri : badTriangles) {
+
+                if (&tri == &otherTri) continue;
+
+                if (otherTri.containsEdge(edge.v1, edge.v2)) {
+                    isShared = true;
                     break;
                 }
             }
-            if (!shared) polygon.push_back(edge);
+            if (!isShared) {
+                polygon.push_back(edge);
+            }
         }
     }
 
@@ -78,22 +90,32 @@ Triangle Delaunay::createSuperTriangle() {
 
 
 void Delaunay::cleanup(Triangle superTriangle) {
+    // Remove triangles that include the vertices of the super-triangle
     mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
         [=](const Triangle& triangle) {
             return (triangle.v[0] == superTriangle.v[0] || triangle.v[0] == superTriangle.v[1] || triangle.v[0] == superTriangle.v[2] ||
                     triangle.v[1] == superTriangle.v[0] || triangle.v[1] == superTriangle.v[1] || triangle.v[1] == superTriangle.v[2] ||
                     triangle.v[2] == superTriangle.v[0] || triangle.v[2] == superTriangle.v[1] || triangle.v[2] == superTriangle.v[2]);
         }), mesh.triangles.end());
+
+    // Remove the super-triangle vertices from the mesh
+    mesh.vertices.erase(mesh.vertices.end() - 3, mesh.vertices.end());
 }
 
 
 std::vector<Triangle> Delaunay::triangulate() {
+
+    std::vector<Point> tmp_vertices = mesh.vertices; // Store the original vertices before adding the super-triangle vertices
+
+    mesh.vertices.clear(); // Clear the mesh vertices to start fresh with the super-triangle and the original vertices
+    mesh.triangles.clear(); // Clear the mesh triangles to start fresh
+
     // Start with a super-triangle that encompasses all vertices
     Triangle superTriangle = createSuperTriangle();
     mesh.triangles.push_back(superTriangle);
 
     // Add each vertex to the triangulation
-    for (const auto& vertex : mesh.vertices) {
+    for (const auto& vertex : tmp_vertices) {
         addPoint(vertex);
     }
 
