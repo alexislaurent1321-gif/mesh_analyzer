@@ -1,7 +1,7 @@
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/mesh_analyzer/)
 
-# Mesh analyzer
-Start of the mesh generation project. For now, it involves evaluating the quality of a 2D triangular mesh and edge detection. This project will evolve in the coming weeks to include 2D and eventually 3D mesh generation.
+# Mesh generation
+Start of a project to analyze a mesh and triangulate a 2D space.
 
 # Project structure
 The project is organized into the following folders: 
@@ -10,9 +10,9 @@ The project is organized into the following folders:
 - **visualization :** contains the export in VTK format for ParaView
 
 
-
 # Features
 ## Mesh analyzer
+The mesh analysis section allows you to view its attributes and detect/highlight edges.
 
 #### hashing
 To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. This method involves using a `std::unordered_set` structure with a custom hash function to identify unique edges with an average time complexity of $O(1)$.
@@ -91,14 +91,16 @@ min aspect ratio : 1.20711
 max aspect ratio : 1.20711
 mean aspect ratio : 1.20711
 ```
-The results are correct
+The results are correct.
+> [!WARNING]  
+The VTK export isn't working for this part of the project at the moment. I'll fix it as soon as possible.
 
 
 # Upcoming changes
 ### as soon as possible
-- Replace the main file with demos to test various cases and features of the project separately. Add an error handler.
+- **Replace the main file with demos** to test various cases and features of the project separately. Add an error handler.
 - fix bug of the VTK export
-- Testing triangulation on an irregular set of points
+- Test triangulation on an irregular set of points
 ### in the short term
 - **mesh refinement :** division of triangles with an incorrect aspect ratio
 - **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
