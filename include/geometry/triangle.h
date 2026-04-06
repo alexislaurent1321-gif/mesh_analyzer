@@ -23,7 +23,7 @@ struct Triangle {
     
 
     /**
-     * @brief  Check if the triangle contains a specific edge defined by two vertex indices
+     * @brief  Check if the circumcircle of the triangle contains a specific edge defined by two vertex indices
      * @param v1 index of the first vertex of the edge
      * @param v2 index of the second vertex of the edge
      */
