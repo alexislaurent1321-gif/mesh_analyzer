@@ -1,28 +1,5 @@
 #include "mesh_generation/triangulation.h"
 
-bool Delaunay::isPointInCircumcircle(const Triangle& triangle, const Point& P) {
-
-    // Shift the points so that P is at the origin
-    float ax = this->mesh.vertices[triangle.v[0]].x - P.x;
-    float ay = this->mesh.vertices[triangle.v[0]].y - P.y;
-    float bx = this->mesh.vertices[triangle.v[1]].x - P.x;
-    float by = this->mesh.vertices[triangle.v[1]].y - P.y;
-    float cx = this->mesh.vertices[triangle.v[2]].x - P.x;
-    float cy = this->mesh.vertices[triangle.v[2]].y - P.y;
-
-    // Calculate the determinant of the matrix formed by the shifted points
-    float det31 = ax * ax + ay * ay;
-    float det32 = bx * bx + by * by;
-    float det33 = cx * cx + cy * cy;
-
-    // If the determinant is positive, P is inside the circumcircle of triangle ABC
-    float det = ax * (by * det33 - cy * det32) -
-                ay * (bx * det33 - cx * det32) +
-                det31 * (bx * cy - cx * by);
-
-    return det > 1e-9; // Use a small epsilon to account for floating-point precision issues
-}
-
 
 Triangle Delaunay::createSuperTriangle() {
     // Create a super-triangle that encompasses all vertices in the mesh
@@ -66,7 +43,7 @@ Triangle Delaunay::createSuperTriangle() {
     // Find all triangles whose circumcircle contains the new point
     std::vector<Triangle> badTriangles;
     for (auto& triangle : mesh.triangles) {
-        if (isPointInCircumcircle(triangle, point)) {
+        if (triangle.containsPoint(mesh.vertices, point)) {
             triangle.isBad = true;
             badTriangles.push_back(triangle);
         }
@@ -111,7 +88,6 @@ void Delaunay::cleanup(Triangle superTriangle) {
 
 
 std::vector<Triangle> Delaunay::triangulate() {
-
     // Start with a super-triangle that encompasses all vertices
     Triangle superTriangle = createSuperTriangle();
     mesh.triangles.push_back(superTriangle);

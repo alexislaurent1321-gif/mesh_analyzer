@@ -17,18 +17,7 @@ class Delaunay {
 public:
     Mesh mesh;
 
-
-    /** 
-     * @brief Check if a point is inside the circumcircle of a triangle
-     * @param A First vertex of the triangle
-     * @param B Second vertex of the triangle
-     * @param C Third vertex of the triangle
-     * @param P The point to check
-     * @return true if P is inside the circumcircle, false otherwise
-     */
-    bool isPointInCircumcircle(const Triangle& triangle, const Point& P);
-
-
+    
     /** 
      * @brief Create a super-triangle that encompasses all vertices in the mesh
      * @return The super-triangle
