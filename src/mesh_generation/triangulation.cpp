@@ -3,20 +3,20 @@
 bool Delaunay::isPointInCircumcircle(const Triangle& triangle, const Point& P) {
 
     // Shift the points so that P is at the origin
-    double ax = this->mesh.vertices[triangle.v[0]].x - P.x;
-    double ay = this->mesh.vertices[triangle.v[0]].y - P.y;
-    double bx = this->mesh.vertices[triangle.v[1]].x - P.x;
-    double by = this->mesh.vertices[triangle.v[1]].y - P.y;
-    double cx = this->mesh.vertices[triangle.v[2]].x - P.x;
-    double cy = this->mesh.vertices[triangle.v[2]].y - P.y;
+    float ax = this->mesh.vertices[triangle.v[0]].x - P.x;
+    float ay = this->mesh.vertices[triangle.v[0]].y - P.y;
+    float bx = this->mesh.vertices[triangle.v[1]].x - P.x;
+    float by = this->mesh.vertices[triangle.v[1]].y - P.y;
+    float cx = this->mesh.vertices[triangle.v[2]].x - P.x;
+    float cy = this->mesh.vertices[triangle.v[2]].y - P.y;
 
     // Calculate the determinant of the matrix formed by the shifted points
-    double det31 = ax * ax + ay * ay;
-    double det32 = bx * bx + by * by;
-    double det33 = cx * cx + cy * cy;
+    float det31 = ax * ax + ay * ay;
+    float det32 = bx * bx + by * by;
+    float det33 = cx * cx + cy * cy;
 
     // If the determinant is positive, P is inside the circumcircle of triangle ABC
-    double det = ax * (by * det33 - cy * det32) -
+    float det = ax * (by * det33 - cy * det32) -
                 ay * (bx * det33 - cx * det32) +
                 det31 * (bx * cy - cx * by);
 
@@ -26,10 +26,9 @@ bool Delaunay::isPointInCircumcircle(const Triangle& triangle, const Point& P) {
 
 Triangle Delaunay::createSuperTriangle() {
     // Create a super-triangle that encompasses all vertices in the mesh
-    float minX = std::numeric_limits<float>::lowest();
-    float minY = std::numeric_limits<float>::lowest();
-    float maxX = std::numeric_limits<float>::max();
-    float maxY = std::numeric_limits<float>::max();
+    float minX, minY = std::numeric_limits<float>::max();
+    float maxX, maxY = std::numeric_limits<float>::lowest();
+
 
     for (const auto& vertex : mesh.vertices) {
         minX = std::min(minX, vertex.x);
@@ -59,6 +58,8 @@ Triangle Delaunay::createSuperTriangle() {
 
 
  void Delaunay::addPoint(const Point& point) {
+
+    // Add the new point to the mesh and get its index
     int pointIndex = mesh.vertices.size();
     mesh.vertices.push_back(point);
 
@@ -99,7 +100,18 @@ Triangle Delaunay::createSuperTriangle() {
 }
 
 
+void Delaunay::cleanup(Triangle superTriangle) {
+    mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
+        [=](const Triangle& triangle) {
+            return (triangle.v[0] == superTriangle.v[0] || triangle.v[0] == superTriangle.v[1] || triangle.v[0] == superTriangle.v[2] ||
+                    triangle.v[1] == superTriangle.v[0] || triangle.v[1] == superTriangle.v[1] || triangle.v[1] == superTriangle.v[2] ||
+                    triangle.v[2] == superTriangle.v[0] || triangle.v[2] == superTriangle.v[1] || triangle.v[2] == superTriangle.v[2]);
+        }), mesh.triangles.end());
+}
+
+
 std::vector<Triangle> Delaunay::triangulate() {
+
     // Start with a super-triangle that encompasses all vertices
     Triangle superTriangle = createSuperTriangle();
     mesh.triangles.push_back(superTriangle);
@@ -110,12 +122,7 @@ std::vector<Triangle> Delaunay::triangulate() {
     }
 
     // Remove triangles that include the vertices of the super-triangle
-    mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
-    [this, superTriangle](const Triangle& triangle){ 
-        return isPointInCircumcircle(triangle, mesh.vertices[superTriangle.v[0]]) || 
-            isPointInCircumcircle(triangle, mesh.vertices[superTriangle.v[1]]) || 
-            isPointInCircumcircle(triangle, mesh.vertices[superTriangle.v[2]]); 
-    }), mesh.triangles.end());
+    cleanup(superTriangle);
 
     return mesh.triangles;
 }

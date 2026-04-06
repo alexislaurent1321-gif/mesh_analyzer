@@ -44,6 +44,13 @@ public:
 
 
     /** 
+     * @brief Clean up the mesh by removing triangles that include the vertices of the super-triangle
+     * @param superTriangle The super-triangle
+     */
+    void cleanup(Triangle superTriangle);
+
+
+    /** 
      * @brief Perform Delaunay triangulation on the current set of vertices in the mesh
      * @return A vector of triangles representing the Delaunay triangulation
      */
