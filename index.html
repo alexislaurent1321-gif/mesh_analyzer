@@ -77,7 +77,7 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://alexislaurent1321-gif.github.io/mesh_analyzer/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 Mesh generation</h1>
-<p>Start of a project to analyze a mesh and triangulate a 2D space.</p>
+<p>Start of a project to analyze a triangular mesh or create one using using Delaunay.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Project structure</h1>
 <p>The project is organized into the following folders:</p><ul>
@@ -134,7 +134,7 @@ Delaunay triangulation</h2>
 <p>The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. </p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Test on a regular grid</h3>
-<p>To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ grid : </p><div class="fragment"><div class="line">Vertices : 25</div>
+<p>To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : </p><div class="fragment"><div class="line">Vertices : 25</div>
 <div class="line">Triangles : 32</div>
 <div class="line">Unique edges : 56</div>
 <div class="line">min aspect ratio : 1.20711</div>
