@@ -1,7 +1,7 @@
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/mesh_analyzer/)
 
 # Mesh generation
-Start of a project to analyze a triangular mesh or create one using using Delaunay. 
+Start of a project to analyze a triangular mesh or create one using Delaunay. 
 
 # Project structure
 The project is organized into the following folders: 
