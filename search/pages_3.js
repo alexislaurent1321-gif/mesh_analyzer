@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['days_0',['in the coming days',['../index.html#autotoc_md12',1,'']]],
-  ['dependencies_1',['Dependencies',['../index.html#autotoc_md16',1,'']]],
-  ['detection_2',['detection',['../index.html#autotoc_md4',1,'Boundaries detection'],['../index.html#autotoc_md10',1,'Boundaries detection']]]
+  ['days_0',['in the coming days',['../index.html#autotoc_md9',1,'']]],
+  ['delaunay_20triangulation_1',['Delaunay triangulation',['../index.html#autotoc_md7',1,'']]],
+  ['dependencies_2',['Dependencies',['../index.html#autotoc_md13',1,'']]],
+  ['detection_3',['Boundaries detection',['../index.html#autotoc_md5',1,'']]]
 ];

@@ -87,7 +87,16 @@ Mesh class</h2>
 <h4 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 hashing</h4>
 <p>To ensure optimal search performance within the graph and avoid duplicate edges, we construct a hash table. This method involves using a <span class="tt">std::unordered_set</span> structure with a custom hash function to identify unique edges with an average time complexity of $O(1)$.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Exemple</h4>
+<p>Here, an exemple for a cube : </p><div class="fragment"><div class="line">Vertices : 8</div>
+<div class="line">Triangles : 12</div>
+<div class="line">Unique edges : 18</div>
+<div class="line">min aspect ratio : 1.20711</div>
+<div class="line">max aspect ratio : 1.20711</div>
+<div class="line">mean aspect ratio : 1.20711</div>
+</div><!-- fragment --><p> The triangles that make up a cube are isosceles-right triangles, which corresponds to an aspect ratio of $\simeq 1.2$.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Aspect ratio formula</h2>
 <p>Let there be a triangle with sides a, b, and c. The formula is</p>
 <p>$$\frac{abc}{(b+c-a)(c+a-b)(a+b-c)}$$</p>
@@ -95,67 +104,48 @@ Aspect ratio formula</h2>
 <li>a ratio of 1 corresponds to a perfect equilateral triangle.</li>
 <li>the higher the ratio, the more distorted the triangle becomes, which can hinder the convergence of the solvers.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+<table class="doxtable">
+<tr>
+<td><img src="https://github.com/user-attachments/assets/aeea27de-0dd5-40a6-b300-3f0f8b586e1b" alt="cube_ratios" width="600" height="300" class="inline"/> </td><td><img src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" alt="cube2_ratios" width="600" height="300" class="inline"/> </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Boundaries detection</h2>
 <p>Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle. To evaluate the valence of the edges (the number of triangles they belong to), we create a <span class="tt">std::unordered_map</span> that stores integers as values and edges as keys. We iterate through the edges of each triangle and increment the value corresponding to the evaluated edge by 1.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<p>The example used here is a hemisphere with some missing faces. Part of the edge, as well as two triangles sharing a common vertex, have been removed.</p>
+<p><img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" style="width:50%;" class="inline"/></p>
+<p>The results show that all edges are detected.</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 Smoothing</h2>
 <p>A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$.</p>
 <p>$$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$</p>
 <p>if $\lambda = 1$, the new position corresponds simply to the mean of neighbourghs' positions :</p>
 <p>$$v_i \longleftarrow \frac{1}{N_i}\sum_{j=1}^{N_i} v_j$$</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-Results</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
-Cube</h2>
-<p>To verify that the quality of the triangles is accurately assessed, we simply try the experiment on a cube and then on a stretched cube.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-cube</h3>
-<p>First, we check that the number of vertices, triangles, and edges matches the expected result </p><div class="fragment"><div class="line">Vertices : 8</div>
-<div class="line">Triangles : 12</div>
-<div class="line">Unique edges : 18</div>
-</div><!-- fragment --><p> These numbers are correct, particularly the number of vertices, which shows that the hashing worked. Next, we look at the quality of the triangles. We simply expect to get the same ratio for each of them :</p>
-<div class="fragment"><div class="line">min aspect ratio : 1.20711</div>
-<div class="line">max aspect ratio : 1.20711</div>
-<div class="line">mean aspect ratio : 1.20711</div>
-</div><!-- fragment --><p><img src="https://github.com/user-attachments/assets/aeea27de-0dd5-40a6-b300-3f0f8b586e1b" alt="cube_ratios" width="600" height="300" class="inline"/></p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
-stretched cube</h3>
-<p>In this configuration, the height along the z-axis is doubled : </p><div class="fragment"><div class="line">min aspect ratio : 1.20711</div>
-<div class="line">max aspect ratio : 1.46353</div>
-<div class="line">mean aspect ratio : 1.37805</div>
-</div><!-- fragment --><p> We make sure that we get a higher value on the side faces, since the triangles are more stretched :</p>
-<p><img src="https://github.com/user-attachments/assets/75ffb92b-da42-4868-8ef9-5d5246ebd412" alt="cube2_ratios" width="600" height="300" class="inline"/></p>
-<p>On the stretched cube, the tool correctly detects the increase in the aspect ratio on the side faces (1.463).</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
-Boundaries detection</h2>
-<p>The example used here is a hemisphere with some missing faces. Part of the edge, as well as two triangles sharing a common vertex, have been removed.</p>
-<p><img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" class="inline"/></p>
-<p>The results show that all edges are detected.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Delaunay triangulation</h2>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 Upcoming changes</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 in the coming days</h3>
 <ul>
 <li><b>smoothing :</b> Implementation of Laplacian smoothing to improve mesh uniformity</li>
 <li>support for quad meshes (maybe) </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 in the short term</h3>
 <ul>
 <li><b>mesh simplification :</b> edge collapse (<a href="https://arxiv.org/pdf/2512.19959">A Comprehensive Guide to Mesh Simplification using Edge Collapse</a>)</li>
 <li>implementation of simple triangulation method (starting with Delaunay) </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 in the longer term</h3>
 <ul>
 <li>retopology</li>
 <li>support for 3D meshes</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Compilation and execution</h1>
 <p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Dependencies</h3>
 <ul>
 <li><a href="https://github.com/tinyobjloader/tinyobjloader">tinyobjloader</a> (included in the code)</li>
