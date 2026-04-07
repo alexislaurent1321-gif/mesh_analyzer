@@ -11,7 +11,7 @@ The project is organized into the following folders:
 
 
 # Features
-## Mesh analyzer
+## Mesh analyzer (`demo/analyzer.cpp`)
 The mesh analysis section allows you to view its attributes and detect/highlight edges.
 
 #### hashing
@@ -54,7 +54,7 @@ Here is an example with a cube and a stretched cube. Since the side faces are st
   </tr>
 </table>
 
-## Boundaries detection
+#### Boundaries detection 
 Another function of this project is to detect the edges of the mesh if it is open. To do this, we select the edges along the boundary. An edge is considered to belong to the boundary of the region if it belongs to exactly one triangle. 
 To evaluate the valence of the edges (the number of triangles they belong to), we create a `std::unordered_map` that stores integers as values and edges as keys. We iterate through the edges of each triangle and increment the value corresponding to the evaluated edge by 1.
 
@@ -66,7 +66,7 @@ The example used here is a hemisphere with some missing faces. Part of the edge,
 
 The results show that all edges are detected.
 
-## Smoothing
+## Smoothing (`demo/smoothing.cpp`)
 A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$. 
 
 $$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$
@@ -79,7 +79,7 @@ Here is an example of a cube with $\lambda=1$ and $10$ iterations :
 
 <img width="1209" height="600" alt="cube_smooth" src="https://github.com/user-attachments/assets/aac01706-2f8b-4704-a0aa-ee5772952bb7" style="width:50%;" />
 
-## Delaunay triangulation
+## Delaunay triangulation (`demo/triangulation.cpp`)
 The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. 
 ### Test on a regular grid
 To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : 
@@ -91,22 +91,24 @@ min aspect ratio : 1.20711
 max aspect ratio : 1.20711
 mean aspect ratio : 1.20711
 ```
+
+<img width="1209" height="600" alt="grid_triangulated" src="https://github.com/user-attachments/assets/53eee18e-3077-4b87-9eea-634a993a1e06" style="width:50%;"/>
+
 The results are correct.
-> [!WARNING]  
-The VTK export isn't working for this part of the project at the moment. I'll fix it as soon as possible.
+
 
 
 # Upcoming changes
 ### as soon as possible
-- **Replace the main file with demos** to test various cases and features of the project separately. Add an error handler.
-- fix bug of the VTK export
 - Test triangulation on an irregular set of points
+- manually generate and triangulate basic shapes (grid, cylinder, circle) in the `basic_shapes` file
 ### in the short term
-- **mesh refinement :** division of triangles with an incorrect aspect ratio
 - **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
+- **mesh refinement :** division of triangles with an incorrect aspect ratio
+---> I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.
 ### in the longer term
-- support for 3D meshes
-- retopology
+- support for 3D meshes **(tetrahedral)**
+- retopology (maybe)
 - **mesh simplification :** edge collapse ([A Comprehensive Guide to Mesh Simplification
 using Edge Collapse](https://arxiv.org/pdf/2512.19959)) (maybe)
 
