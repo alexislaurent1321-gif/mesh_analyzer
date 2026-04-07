@@ -101,7 +101,7 @@ The results are correct.
 # Upcoming changes
 ### as soon as possible
 - Test triangulation on an irregular set of points
-- manually generate and triangulate basic shapes (grid, cylinder, circle) in the `basic_shapes` file
+- manually generate and triangulate basic shapes (grid, cylinder, disc) in the `basic_shapes` file
 ### in the short term
 - **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
 - **mesh refinement :** division of triangles with an incorrect aspect ratio
