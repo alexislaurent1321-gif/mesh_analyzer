@@ -12,11 +12,11 @@ size_t Mesh::countUniqueEdges() const {
     // Iterate through all triangles and add their edges to the set
     for (const auto& t : triangles) {
         for (int i = 0; i < 3; ++i) {
-            int u = t.v[i];
-            int v = t.v[(i + 1) % 3];
+            int v1 = t.v[i];
+            int v2 = t.v[(i + 1) % 3];
 
             // Store edges in a consistent order to avoid duplicates
-            uniqueEdges.insert({std::min(u, v), std::max(u, v)}); 
+            uniqueEdges.insert({std::min(v1, v2), std::max(v1, v2)}); 
         }
     }
     return uniqueEdges.size();
@@ -106,10 +106,10 @@ std::unordered_map<Edge, int, EdgeHash> Mesh::getEdgeValences() const {
     
     for (const auto& t : triangles) {
         for (int i = 0; i < 3; ++i) {
-            int u = t.v[i];
-            int v = t.v[(i + 1) % 3];
+            int v1 = t.v[i];
+            int v2 = t.v[(i + 1) % 3];
 
-            Edge e = {std::min(u, v), std::max(u, v)};  // Store edges in a consistent order
+            Edge e = {std::min(v1, v2), std::max(v1, v2)};  // Store edges in a consistent order
             counts[e]++;
         }
     }

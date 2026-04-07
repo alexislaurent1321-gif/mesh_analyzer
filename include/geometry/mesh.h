@@ -87,6 +87,7 @@ public:
      */
     std::vector<Edge> getBoundaryEdges() const;
 
+    
     /** 
      * @brief Smooth the mesh by iteratively moving each vertex towards the centroid of its neighbors
      * @param iterations Number of smoothing iterations to perform

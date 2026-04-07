@@ -47,41 +47,6 @@ struct Point {
     float length() const;
 
 
-    Point operator-(const Point& other) const{
-        return Point(x - other.x, y - other.y, z - other.z);
-    }
-
-    Point operator+(const Point& other) const{
-        return Point(x + other.x, y + other.y, z + other.z);
-    }
-
-    Point operator*(float scalar) const {
-        return Point(x * scalar, y * scalar, z * scalar);
-    }
-
-    bool operator==(const Point& other) const {
-        return std::abs(x - other.x) < 1e-9 && std::abs(y - other.y) < 1e-9 && std::abs(z - other.z) < 1e-9;
-    }
-
-    void operator+=(const Point& other) {
-        x += other.x;
-        y += other.y;
-        z += other.z;
-    }
-
-    void operator/=(float scalar) {
-        x /= scalar;
-        y /= scalar;
-        z /= scalar;
-    }
-
-    void operator*=(float scalar) {
-        x *= scalar;
-        y *= scalar;
-        z *= scalar;
-    }
-
-
     /**
      * @brief Calculate the distance between this point and another point
      * 
@@ -90,6 +55,15 @@ struct Point {
      */
     float distance(const Point& other) const;
 
+
+    // Operator overloads for vector arithmetic
+    Point operator-(const Point& other) const;
+    Point operator+(const Point& other) const;
+    Point operator*(float scalar) const;
+    bool operator==(const Point& other) const;
+    void operator+=(const Point& other);
+    void operator/=(float scalar);
+    void operator*=(float scalar);
     
     /**
      * @brief Overload the << operator to print the point's coordinates
