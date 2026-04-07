@@ -5,10 +5,12 @@
 #include "mesh_generation/triangulation.h"
 
 
-// Main function to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality
+/** @file analyzer.cpp
+ * @brief A simple demo to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality. It also exports the mesh to VTK format for visualization in tools like ParaView.
+ */
+
 int main() {
     
-
     Mesh mesh;
 
     if (!mesh.loadObj("models/demi_sphere_broken.obj")) {

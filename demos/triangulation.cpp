@@ -5,7 +5,10 @@
 #include "mesh_generation/triangulation.h"
 
 
-// Main function to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality
+/** @file triangulation.cpp
+ * @brief A simple demo to generate a grid mesh, perform Delaunay triangulation on it, analyze the resulting mesh, and export it to VTK format for visualization in tools like ParaView.
+ */
+
 int main() {
     
     // Triangulation test on a grid
