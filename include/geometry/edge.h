@@ -19,9 +19,9 @@
  * 
  */
 struct Edge {
-    int u, v;
+    int v1, v2;
     bool operator==(const Edge& other) const {
-        return u == other.u && v == other.v;
+        return (v1 == other.v1 && v2 == other.v2) || (v1 == other.v2 && v2 == other.v1);
     }
 };
 
@@ -31,7 +31,7 @@ struct Edge {
  */
 struct EdgeHash {
     size_t operator()(const Edge& e) const {
-        return std::hash<int>{}(e.u) ^ (std::hash<int>{}(e.v) << 1); // Combine hashes of u and v
+        return std::hash<int>{}(e.v1) ^ (std::hash<int>{}(e.v2) << 1); // Combine hashes of v1 and v2
     }
 };
 
