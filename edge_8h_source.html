@@ -96,9 +96,9 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structEdge.html">   21</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structEdge.html">Edge</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> u, v;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> v1, v2;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code hl_struct" href="structEdge.html">Edge</a>&amp; other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> u == other.u &amp;&amp; v == other.v;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> (v1 == other.v1 &amp;&amp; v2 == other.v2) || (v1 == other.v2 &amp;&amp; v2 == other.v1);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
 </div>
@@ -106,7 +106,7 @@ $(function() {
 <div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structEdgeHash.html">   32</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structEdgeHash.html">EdgeHash</a> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">size_t</span> operator()(<span class="keyword">const</span> <a class="code hl_struct" href="structEdge.html">Edge</a>&amp; e)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> std::hash&lt;int&gt;{}(e.u) ^ (std::hash&lt;int&gt;{}(e.v) &lt;&lt; 1); <span class="comment">// Combine hashes of u and v</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> std::hash&lt;int&gt;{}(e.v1) ^ (std::hash&lt;int&gt;{}(e.v2) &lt;&lt; 1); <span class="comment">// Combine hashes of v1 and v2</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 </div>
