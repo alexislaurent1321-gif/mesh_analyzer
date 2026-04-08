@@ -6,7 +6,6 @@ var searchData=
   ['smooth_3',['smooth',['../classMesh.html#a16a4868079b9a5bc5a3755484b48d267',1,'Mesh']]],
   ['smoothing_20cpp_4',['Smoothing (&lt;span class=&quot;tt&quot;&gt;demo/smoothing.cpp&lt;/span&gt;)',['../index.html#autotoc_md8',1,'']]],
   ['smoothing_20demo_20smoothing_20cpp_5',['Smoothing (&lt;span class=&quot;tt&quot;&gt;demo/smoothing.cpp&lt;/span&gt;)',['../index.html#autotoc_md8',1,'']]],
-  ['smoothing_2ecpp_6',['smoothing.cpp',['../smoothing_8cpp.html',1,'']]],
-  ['soon_20as_20possible_7',['as soon as possible',['../index.html#autotoc_md12',1,'']]],
-  ['structure_8',['Project structure',['../index.html#autotoc_md1',1,'']]]
+  ['soon_20as_20possible_6',['as soon as possible',['../index.html#autotoc_md12',1,'']]],
+  ['structure_7',['Project structure',['../index.html#autotoc_md1',1,'']]]
 ];
