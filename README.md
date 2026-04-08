@@ -130,7 +130,7 @@ We observe a better average aspect ratio. However, this result can be further im
 ### in the longer term
 - see advancing front method ([Advancing Front Grid
 Generation](http://ebrary.free.fr/Mesh%20Generation/Handbook_of_Grid_%20Generation,1999/chap17.pdf))
-- support for 3D meshes **(tetrahedral)** : analyzer, boundaries detection, Delaunay, advancing front method, eventually octree meshing
+- support for 3D meshes **(tetrahedral)** : analyzer, boundaries detection, Delaunay, advancing front method
 - **mesh simplification :** edge collapse ([A Comprehensive Guide to Mesh Simplification
 using Edge Collapse](https://arxiv.org/pdf/2512.19959)) (maybe)
 
