@@ -98,7 +98,7 @@ $$v_i \longleftarrow \frac{1}{N_i}\sum_{j=1}^{N_i} v_j$$
 ### Boundaries conditions
 Using smoothing can improve the quality of a mesh, particularly that of flat 2D meshes. These meshes are always open, which poses a problem because all the vertices quickly converge toward the center to the point where the mesh may eventually disappear. The idea, therefore, is to avoid applying smoothing to the edge edges. 
 
-Here, we take the example of a random set of points that we triangulate and then apply smoothing to: 
+Here, we take the example of a random set of points that we triangulate and then apply smoothing (until the result stops changing) to: 
 
 <img width="1209" height="600" alt="smooth_before" src="https://github.com/user-attachments/assets/bb634cbb-85b9-46c1-9f07-0cf98881b850" style="width:50%;"/>
 
