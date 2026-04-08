@@ -166,13 +166,14 @@ as soon as possible</h3>
 in the short term</h3>
 <ul>
 <li><b>local mesh adjustments :</b> remove triangles from the mesh, especially if the model contains a hole or is not convex.</li>
-<li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh. </li>
+<li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.</li>
+<li>see Constrained Delaunay triangulation </li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 in the longer term</h3>
 <ul>
-<li>support for 3D meshes <b>(tetrahedral)</b></li>
-<li>retopology (maybe)</li>
+<li>see advancing front method (<a href="http://ebrary.free.fr/Mesh%20Generation/Handbook_of_Grid_%20Generation,1999/chap17.pdf">Advancing Front Grid Generation</a>)</li>
+<li>support for 3D meshes <b>(tetrahedral)</b> : analyzer, boundaries detection, Delaunay, advancing front method, eventually octree meshing</li>
 <li><b>mesh simplification :</b> edge collapse (<a href="https://arxiv.org/pdf/2512.19959">A Comprehensive Guide to Mesh Simplification using Edge Collapse</a>) (maybe)</li>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
