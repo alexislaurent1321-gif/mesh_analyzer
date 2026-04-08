@@ -5,25 +5,27 @@
 #include "mesh_generation/triangulation.h"
 
 
-/** @file smoothing.cpp
- * @brief A simple demo to load a mesh from an OBJ file, apply Laplacian smoothing to improve the mesh quality, and print out basic statistics about the mesh. It also exports the smoothed mesh to VTK format for visualization in tools like ParaView.
+/** @file triangulation.cpp
+ * @brief A simple demo to generate a grid mesh, perform Delaunay triangulation on it, analyze the resulting mesh, and export it to VTK format for visualization in tools like ParaView.
  */
 
 int main() {
     
-    Mesh mesh;
+    // Triangulation test on a grid
 
-    if (!mesh.loadObj("models/cube_high_res.obj")) {
-        std::cerr << "Error loading OBJ file." << std::endl;
-        return 1;
-    }
+    // Example of generating a grid mesh and exporting it
+    Mesh gridMesh;
+    generateRandomPoints(gridMesh, 25, 1.f, 1.f);
 
-    mesh.smooth(10, 1.f);   // Optional: Smooth 
-    
-    mesh.analyzeMesh();
+    Delaunay delaunay;
+    delaunay.mesh = gridMesh;
+    delaunay.mesh.triangles = delaunay.triangulate();
 
-    std::cout << "Exporting mesh to VTK format..." << std::endl;
-    exportToVTK("output.vtk", mesh);
+    // delaunay.mesh.smooth(100, 1.f); // Apply smoothing to improve triangle quality
+
+    delaunay.mesh.analyzeMesh();
+    exportToVTK("output.vtk", delaunay.mesh);
+
     
     return 0;
 }

@@ -10,3 +10,11 @@ void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly) {
         }
     }
 }
+
+void generateRandomPoints(Mesh& mesh, int N, float Lx, float Ly) {
+    for (int i = 0; i < N; ++i) {
+        float x = static_cast<float>(rand()) / RAND_MAX * Lx;
+        float y = static_cast<float>(rand()) / RAND_MAX * Ly;
+        mesh.vertices.push_back({x, y});
+    }
+}

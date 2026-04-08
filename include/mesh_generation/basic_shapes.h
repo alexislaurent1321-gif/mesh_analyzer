@@ -1,3 +1,7 @@
+#ifndef BASIC_SHAPES_H
+#define BASIC_SHAPES_H
+
+
 #include "geometry/mesh.h"
 
 /** 
@@ -18,10 +22,6 @@ void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly);
  * @param Lx The width of the bounding box
  * @param Ly The height of the bounding box
  */
-void generateRandomPoints(Mesh& mesh, int N, float Lx, float Ly) {
-    for (int i = 0; i < N; ++i) {
-        float x = static_cast<float>(rand()) / RAND_MAX * Lx;
-        float y = static_cast<float>(rand()) / RAND_MAX * Ly;
-        mesh.vertices.push_back({x, y});
-    }
-}
+void generateRandomPoints(Mesh& mesh, int N, float Lx, float Ly);
+
+#endif

@@ -26,6 +26,3 @@ target_link_libraries(smoothing PRIVATE mesh_analyzer)
 
 add_executable(triangulation demos/triangulation.cpp)
 target_link_libraries(triangulation PRIVATE mesh_analyzer)
-
-add_executable(triangulation2 demos/triangulation2.cpp)
-target_link_libraries(triangulation2 PRIVATE mesh_analyzer)

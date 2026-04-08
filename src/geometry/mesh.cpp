@@ -132,16 +132,33 @@ std::vector<Edge> Mesh::getBoundaryEdges() const {
 
 void Mesh::smooth(int iterations, float lambda){
         
-    std::unordered_map<int, std::unordered_set<int>> adjacency;
+    // Build an adjacency list for the vertices based on the triangles
+    std::unordered_map<int, std::unordered_set<int>> adjacency; 
+    std::unordered_set<int> boundaryVertices; // Keep track of boundary vertices to avoid moving them during smoothing
+
+    // Get boundary vertices from boundary edges
+    std::vector<Edge> boundaryEdges = getBoundaryEdges();
+    for (const auto& edge : boundaryEdges) {
+        boundaryVertices.insert(edge.v1);
+        boundaryVertices.insert(edge.v2);
+    }
+
     for (const auto& triangle : triangles) {
         adjacency[triangle.v[0]].insert({triangle.v[1], triangle.v[2]});
         adjacency[triangle.v[1]].insert({triangle.v[0], triangle.v[2]});
         adjacency[triangle.v[2]].insert({triangle.v[0], triangle.v[1]});
     }
 
+    // Perform smoothing iterations
     for(int iter = 0; iter < iterations; ++iter) {
         std::vector<Point> nextPositions = vertices;
         for (int i = 0; i < vertices.size(); ++i) {
+
+            if (boundaryVertices.count(i)) {
+                continue; 
+            }
+
+            if (adjacency[i].empty()) continue;
 
             Point centroid = {0, 0, 0};
             for (int neighborIdx : adjacency[i]) {
