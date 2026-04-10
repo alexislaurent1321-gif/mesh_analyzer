@@ -2,7 +2,7 @@
 
 #include "mesh.h"
 #include "visualization/exportToVTK.h"
-#include "mesh_generation/triangulation.h"
+#include "processing/triangulation.h"
 
 
 /** @file triangulation.cpp

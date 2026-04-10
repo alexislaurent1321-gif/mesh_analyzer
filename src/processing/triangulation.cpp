@@ -1,4 +1,4 @@
-#include "mesh_generation/triangulation.h"
+#include "processing/triangulation.h"
 
 
 Triangle Delaunay::createSuperTriangle() {

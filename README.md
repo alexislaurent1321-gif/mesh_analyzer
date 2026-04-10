@@ -6,7 +6,7 @@ Start of a project to analyze a triangular mesh or create one using Delaunay.
 # Project structure
 The project is organized into the following folders: 
 - **geometry :** contains classes for points, triangles, meshes and edges
-- **mesh_generation :** contains classes for generating grids or triangulate a set of vertices
+- **processing :** contains classes for generating grids or triangulate a set of vertices
 - **visualization :** contains the export in VTK format for ParaView
 
 

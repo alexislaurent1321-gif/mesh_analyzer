@@ -9,8 +9,8 @@ add_library(mesh_analyzer
     src/geometry/point.cpp
     src/mesh.cpp
     src/visualization/exportToVTK.cpp
-    src/mesh_generation/basic_shapes.cpp
-    src/mesh_generation/triangulation.cpp
+    src/processing/basic_shapes.cpp
+    src/processing/triangulation.cpp
 )
 
 target_include_directories(mesh_analyzer PUBLIC include)
