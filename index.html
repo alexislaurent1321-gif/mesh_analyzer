@@ -159,14 +159,15 @@ Upcoming changes</h1>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 as soon as possible</h3>
 <ul>
-<li>Test triangulation on an irregular set of points</li>
-<li>manually generate and triangulate basic shapes (grid, cylinder, disc) in the <span class="tt">basic_shapes</span> file </li>
+<li>Refactoring the code (SRP)</li>
+<li>manually generate and triangulate basic shapes (grid, cylinder, disc) in the <span class="tt">basic_shapes</span> file</li>
+<li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.</li>
+<li>analyzer for tetrahedral meshes </li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 in the short term</h3>
 <ul>
 <li><b>local mesh adjustments :</b> remove triangles from the mesh, especially if the model contains a hole or is not convex.</li>
-<li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.</li>
 <li>see Constrained Delaunay triangulation </li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
