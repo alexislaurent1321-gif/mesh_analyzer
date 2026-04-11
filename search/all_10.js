@@ -9,6 +9,5 @@ var searchData=
   ['triangle_6',['Triangle',['../structTriangle.html',1,'']]],
   ['triangles_7',['triangles',['../classMesh.html#acd19d61e90f1e48905bf53b36ee229f2',1,'Mesh']]],
   ['triangulation_20cpp_8',['Delaunay triangulation (&lt;span class=&quot;tt&quot;&gt;demo/triangulation.cpp&lt;/span&gt;)',['../index.html#autotoc_md8',1,'']]],
-  ['triangulation_20demo_20triangulation_20cpp_9',['Delaunay triangulation (&lt;span class=&quot;tt&quot;&gt;demo/triangulation.cpp&lt;/span&gt;)',['../index.html#autotoc_md8',1,'']]],
-  ['triangulation_2ecpp_10',['triangulation.cpp',['../triangulation_8cpp.html',1,'']]]
+  ['triangulation_20demo_20triangulation_20cpp_9',['Delaunay triangulation (&lt;span class=&quot;tt&quot;&gt;demo/triangulation.cpp&lt;/span&gt;)',['../index.html#autotoc_md8',1,'']]]
 ];
