@@ -29,18 +29,16 @@ public:
     std::vector<Triangle> triangles;    ///< List of triangles defined by vertex indices
     std::vector<float> ratios;          ///< aspect ratios of triangles (for quality analysis)
 
-
     
+/**
+ * @brief  Load a mesh from an OBJ file using tinyobjloader
+ * 
+ * @param path Path to the OBJ file to load 
+ * @return true 
+ * @return false 
+ */
+bool loadObj(const std::string& path);
 
-    /**
-     * @brief  Load a mesh from an OBJ file using tinyobjloader
-     * 
-     * @param path Path to the OBJ file to load 
-     * @return true 
-     * @return false 
-     */
-    bool loadObj(const std::string& path);
-        
 };
 
 #endif

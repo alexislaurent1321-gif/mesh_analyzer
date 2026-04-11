@@ -8,6 +8,8 @@ add_library(mesh_analyzer
     src/geometry/triangle.cpp
     src/geometry/point.cpp
     src/mesh.cpp
+    src/analysis.cpp
+    src/smoothing.cpp
     src/visualization/exportToVTK.cpp
     src/processing/basic_shapes.cpp
     src/processing/triangulation.cpp
