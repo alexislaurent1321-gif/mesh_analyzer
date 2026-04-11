@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <fstream>
 
-#include "mesh.h"
+#include "mesh/mesh.h"
 
 // Quality analysis
 

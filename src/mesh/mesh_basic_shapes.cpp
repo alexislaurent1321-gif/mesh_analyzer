@@ -1,4 +1,4 @@
-#include "processing/basic_shapes.h"
+#include "mesh/mesh_basic_shapes.h"
 
 void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly) {
     float dx = Lx / (Nx - 1);

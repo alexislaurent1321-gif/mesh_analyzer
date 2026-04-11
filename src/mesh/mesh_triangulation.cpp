@@ -1,4 +1,4 @@
-#include "processing/triangulation.h"
+#include "mesh/mesh_triangulation.h"
 
 
 Triangle createSuperTriangle(Mesh& mesh) {

@@ -7,13 +7,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(mesh_analyzer 
     src/geometry/triangle.cpp
     src/geometry/point.cpp
-    src/mesh.cpp
-    src/analysis.cpp
-    src/smoothing.cpp
-    src/visualization/exportToVTK.cpp
-    src/processing/basic_shapes.cpp
-    src/processing/triangulation.cpp
-    src/loadObj.cpp
+
+    src/mesh/mesh.cpp
+    src/mesh/mesh_analysis.cpp
+    src/mesh/mesh_smoothing.cpp
+    src/mesh/mesh_basic_shapes.cpp
+    src/mesh/mesh_triangulation.cpp
+
+    src/io/exportToVTK.cpp
+    src/io/loadObj.cpp
 )
 
 target_include_directories(mesh_analyzer PUBLIC include)

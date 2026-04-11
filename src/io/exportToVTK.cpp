@@ -1,5 +1,5 @@
-#include "visualization/exportToVTK.h"
-#include "analysis.h"
+#include "io/exportToVTK.h"
+#include "mesh/mesh_analysis.h"
 
 void exportToVTK(const std::string& filename, const Mesh& mesh) {
     std::ofstream file(filename);

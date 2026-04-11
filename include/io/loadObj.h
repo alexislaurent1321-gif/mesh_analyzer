@@ -1,4 +1,4 @@
-#include "mesh.h"
+#include "mesh/mesh.h"
 
 /**
  * @brief  Load a mesh from an OBJ file using tinyobjloader

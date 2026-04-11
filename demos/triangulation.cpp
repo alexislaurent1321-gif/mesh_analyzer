@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "mesh.h"
-#include "analysis.h"
-#include "smoothing.h"
-#include "visualization/exportToVTK.h"
-#include "processing/triangulation.h"
+#include "mesh/mesh.h"
+#include "mesh/mesh_analysis.h"
+#include "mesh/mesh_smoothing.h"
+#include "io/exportToVTK.h"
+#include "mesh/mesh_triangulation.h"
 
 
 /** @file triangulation.cpp

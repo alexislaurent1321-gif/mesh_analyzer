@@ -3,7 +3,7 @@
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <extern/tiny_obj_loader.h>
 
-#include "loadObj.h"
+#include "io/loadObj.h"
 
 bool loadObj(Mesh& mesh, const std::string& path) {
     tinyobj::ObjReaderConfig reader_config; // Create a reader configuration object (optional)

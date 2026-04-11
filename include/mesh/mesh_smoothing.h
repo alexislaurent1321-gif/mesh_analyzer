@@ -1,5 +1,5 @@
-#include "mesh.h"
-#include "analysis.h"
+#include "mesh/mesh.h"
+#include "mesh/mesh_analysis.h"
 
 /** 
  * @brief Smooth the mesh by iteratively moving each vertex towards the centroid of its neighbors

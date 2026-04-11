@@ -1,6 +1,6 @@
 #include <numeric>
 
-#include "analysis.h"
+#include "mesh/mesh_analysis.h"
 
 size_t countUniqueEdges(const Mesh& mesh) {
     std::unordered_set<Edge, EdgeHash> uniqueEdges; // Use an unordered_set to store unique edges

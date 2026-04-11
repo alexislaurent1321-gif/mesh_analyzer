@@ -1,4 +1,4 @@
-#include "smoothing.h"
+#include "mesh/mesh_smoothing.h"
 
 
 void smooth(Mesh& mesh, int iterations, float lambda){
