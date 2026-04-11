@@ -1,7 +1,7 @@
 #include "processing/triangulation.h"
 
 
-Triangle Delaunay::createSuperTriangle() {
+Triangle createSuperTriangle(Mesh& mesh) {
 
     float minX = 1e7f;
     float minY = 1e7f;
@@ -38,7 +38,7 @@ Triangle Delaunay::createSuperTriangle() {
 }
 
 
- void Delaunay::addPoint(const Point& point) {
+ void addPoint(Mesh& mesh, const Point& point) {
 
     // Add the new point to the mesh and get its index
     int pointIndex = mesh.vertices.size();
@@ -89,7 +89,7 @@ Triangle Delaunay::createSuperTriangle() {
 }
 
 
-void Delaunay::cleanup(Triangle superTriangle) {
+void cleanup(Mesh& mesh, Triangle superTriangle) {
     // Remove triangles that include the vertices of the super-triangle
     mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
         [=](const Triangle& triangle) {
@@ -111,7 +111,7 @@ void Delaunay::cleanup(Triangle superTriangle) {
 }
 
 
-std::vector<Triangle> Delaunay::triangulate() {
+void triangulate(Mesh& mesh) {
 
     std::vector<Point> tmp_vertices = mesh.vertices; // Store the original vertices before adding the super-triangle vertices
 
@@ -119,16 +119,14 @@ std::vector<Triangle> Delaunay::triangulate() {
     mesh.triangles.clear(); // Clear the mesh triangles to start fresh
 
     // Start with a super-triangle that encompasses all vertices
-    Triangle superTriangle = createSuperTriangle();
+    Triangle superTriangle = createSuperTriangle(mesh);
     mesh.triangles.push_back(superTriangle);
 
     // Add each vertex to the triangulation
     for (const auto& vertex : tmp_vertices) {
-        addPoint(vertex);
+        addPoint(mesh, vertex);
     }
 
     // Remove triangles that include the vertices of the super-triangle
-    cleanup(superTriangle);
-
-    return mesh.triangles;
+    cleanup(mesh, superTriangle);
 }

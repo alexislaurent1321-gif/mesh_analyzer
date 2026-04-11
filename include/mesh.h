@@ -40,20 +40,7 @@ public:
      * @return false 
      */
     bool loadObj(const std::string& path);
-
-
-   
-
-    
-    /** 
-     * @brief Smooth the mesh by iteratively moving each vertex towards the centroid of its neighbors
-     * @param iterations Number of smoothing iterations to perform
-     * @param lambda Smoothing parameter (0 < lambda < 1)
-     */
-    void smooth(int iterations, float lambda);
-
-
-    
+        
 };
 
 #endif

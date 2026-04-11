@@ -3,6 +3,7 @@
 #include "mesh.h"
 #include "visualization/exportToVTK.h"
 #include "processing/triangulation.h"
+#include "analysis.h"
 
 
 /** @file analyzer.cpp
@@ -18,7 +19,7 @@ int main() {
         return 1;
     }
     
-    mesh.analyzeMesh();
+    analyzeMesh(mesh);
 
     std::cout << "Exporting mesh to VTK format..." << std::endl;
     exportToVTK("output.vtk", mesh);

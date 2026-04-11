@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include "mesh.h"
+#include "analysis.h"
+#include "smoothing.h"
 #include "visualization/exportToVTK.h"
 #include "processing/triangulation.h"
 
@@ -17,14 +19,11 @@ int main() {
     Mesh gridMesh;
     generateGrid(gridMesh, 5, 5, 1.f, 1.f);
 
-    Delaunay delaunay;
-    delaunay.mesh = gridMesh;
-    delaunay.mesh.triangles = delaunay.triangulate();
+    triangulate(gridMesh); // Perform Delaunay triangulation on the grid mesh
 
-    delaunay.mesh.analyzeMesh();
-    exportToVTK("output.vtk", delaunay.mesh);
+    analyzeMesh(gridMesh);
+    exportToVTK("output.vtk", gridMesh);
 
-    
     return 0;
 }
 
