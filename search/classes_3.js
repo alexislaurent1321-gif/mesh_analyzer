@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['edge_0',['Edge',['../structEdge.html',1,'']]],
-  ['edgehash_1',['EdgeHash',['../structEdgeHash.html',1,'']]]
+  ['index_5ft_0',['index_t',['../structtinyobj_1_1index__t.html',1,'tinyobj']]]
 ];

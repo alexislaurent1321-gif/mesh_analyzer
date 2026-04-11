@@ -84,9 +84,11 @@ $(function() {
 <p>A simple demo to load a mesh from an OBJ file, analyze it, and print out basic statistics about the mesh quality. It also exports the mesh to VTK format for visualization in tools like ParaView.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;geometry/mesh.h&quot;</code><br />
-<code>#include &quot;visualization/exportToVTK.h&quot;</code><br />
-<code>#include &quot;mesh_generation/triangulation.h&quot;</code><br />
+<code>#include &quot;mesh/mesh.h&quot;</code><br />
+<code>#include &quot;io/exportToVTK.h&quot;</code><br />
+<code>#include &quot;mesh/mesh_triangulation.h&quot;</code><br />
+<code>#include &quot;mesh/mesh_analysis.h&quot;</code><br />
+<code>#include &quot;io/loadObj.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>

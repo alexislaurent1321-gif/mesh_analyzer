@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['getboundaryedges_0',['getBoundaryEdges',['../classMesh.html#ad60c2eef2ae7c6e6f9db27d865eefec9',1,'Mesh']]],
-  ['getedgevalences_1',['getEdgeValences',['../classMesh.html#a441754f11005e74da5e51978adcda8f5',1,'Mesh']]]
+  ['parsefromfile_0',['ParseFromFile',['../classtinyobj_1_1ObjReader.html#a2aff0b5142ad265dc9fa276064f69700',1,'tinyobj::ObjReader']]],
+  ['parsefromstring_1',['ParseFromString',['../classtinyobj_1_1ObjReader.html#a89a253a20fdf22305b068143cc58dfce',1,'tinyobj::ObjReader']]],
+  ['point_2',['Point',['../structPoint.html#ad92f2337b839a94ce97dcdb439b4325a',1,'Point::Point()'],['../structPoint.html#abfb275991b6f0f8864ad406ba3c8b3ce',1,'Point::Point(float x_, float y_)'],['../structPoint.html#ad56008741db728440b3d469e5fb5cc82',1,'Point::Point(float x_, float y_, float z_)']]]
 ];

@@ -72,7 +72,6 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classMesh-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Mesh Class Reference</div></div>
@@ -84,27 +83,6 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="mesh_8h_source.html">mesh.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:adfbd56782c0881ab15e84e988ccb2f21" id="r_adfbd56782c0881ab15e84e988ccb2f21"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfbd56782c0881ab15e84e988ccb2f21">countUniqueEdges</a> () const</td></tr>
-<tr class="memdesc:adfbd56782c0881ab15e84e988ccb2f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count the number of unique edges in the mesh by iterating through all triangles and adding their edges to an unordered_set.  <br /></td></tr>
-<tr class="memitem:a26955bacd937606838cdc15cbe40e717" id="r_a26955bacd937606838cdc15cbe40e717"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26955bacd937606838cdc15cbe40e717">calculateAspectRatio</a> (const <a class="el" href="structTriangle.html">Triangle</a> &amp;t) const</td></tr>
-<tr class="memdesc:a26955bacd937606838cdc15cbe40e717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the aspect ratio of a triangle defined by its vertex indices. An aspect ratio near to 1 indicates a more equilateral triangle.  <br /></td></tr>
-<tr class="memitem:a21f697301a3b654302f4541f9f856ab6" id="r_a21f697301a3b654302f4541f9f856ab6"><td class="memItemLeft" align="right" valign="top"><a id="a21f697301a3b654302f4541f9f856ab6" name="a21f697301a3b654302f4541f9f856ab6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateAspectRatios</b> ()</td></tr>
-<tr class="memdesc:a21f697301a3b654302f4541f9f856ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the aspect ratio for all triangles in the mesh and store them in the ratios vector. <br /></td></tr>
-<tr class="memitem:a72e5799cfca3db4b75390222190d0890" id="r_a72e5799cfca3db4b75390222190d0890"><td class="memItemLeft" align="right" valign="top"><a id="a72e5799cfca3db4b75390222190d0890" name="a72e5799cfca3db4b75390222190d0890"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>analyzeMesh</b> ()</td></tr>
-<tr class="memdesc:a72e5799cfca3db4b75390222190d0890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyze the mesh by printing out the number of vertices, triangles, and unique edges. Optionally, it could also calculate and print the aspect ratio of each triangle for quality analysis. <br /></td></tr>
-<tr class="memitem:a3682437e3218ed43fa1f63fad796225e" id="r_a3682437e3218ed43fa1f63fad796225e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3682437e3218ed43fa1f63fad796225e">loadObj</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:a3682437e3218ed43fa1f63fad796225e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a mesh from an OBJ file using tinyobjloader.  <br /></td></tr>
-<tr class="memitem:a441754f11005e74da5e51978adcda8f5" id="r_a441754f11005e74da5e51978adcda8f5"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="structEdge.html">Edge</a>, int, <a class="el" href="structEdgeHash.html">EdgeHash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a441754f11005e74da5e51978adcda8f5">getEdgeValences</a> () const</td></tr>
-<tr class="memdesc:a441754f11005e74da5e51978adcda8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="structEdge.html" title="A struct representing an edge in the mesh.">Edge</a> Valences object.  <br /></td></tr>
-<tr class="memitem:ad60c2eef2ae7c6e6f9db27d865eefec9" id="r_ad60c2eef2ae7c6e6f9db27d865eefec9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structEdge.html">Edge</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad60c2eef2ae7c6e6f9db27d865eefec9">getBoundaryEdges</a> () const</td></tr>
-<tr class="memdesc:ad60c2eef2ae7c6e6f9db27d865eefec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary edges of the mesh.  <br /></td></tr>
-<tr class="memitem:a16a4868079b9a5bc5a3755484b48d267" id="r_a16a4868079b9a5bc5a3755484b48d267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16a4868079b9a5bc5a3755484b48d267">smooth</a> (int iterations, float lambda)</td></tr>
-<tr class="memdesc:a16a4868079b9a5bc5a3755484b48d267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smooth the mesh by iteratively moving each vertex towards the centroid of its neighbors.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a0ea7dea37924ad4fb3ac9682641df291" id="r_a0ea7dea37924ad4fb3ac9682641df291"><td class="memItemLeft" align="right" valign="top"><a id="a0ea7dea37924ad4fb3ac9682641df291" name="a0ea7dea37924ad4fb3ac9682641df291"></a>
@@ -119,154 +97,8 @@ std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a 3D mesh. </p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a26955bacd937606838cdc15cbe40e717" name="a26955bacd937606838cdc15cbe40e717"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26955bacd937606838cdc15cbe40e717">&#9670;&#160;</a></span>calculateAspectRatio()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Mesh::calculateAspectRatio </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structTriangle.html">Triangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calculate the aspect ratio of a triangle defined by its vertex indices. An aspect ratio near to 1 indicates a more equilateral triangle. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>float </dd></dl>
-
-</div>
-</div>
-<a id="adfbd56782c0881ab15e84e988ccb2f21" name="adfbd56782c0881ab15e84e988ccb2f21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfbd56782c0881ab15e84e988ccb2f21">&#9670;&#160;</a></span>countUniqueEdges()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t Mesh::countUniqueEdges </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Count the number of unique edges in the mesh by iterating through all triangles and adding their edges to an unordered_set. </p>
-<dl class="section return"><dt>Returns</dt><dd>number of unique edges in the mesh </dd></dl>
-
-</div>
-</div>
-<a id="ad60c2eef2ae7c6e6f9db27d865eefec9" name="ad60c2eef2ae7c6e6f9db27d865eefec9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad60c2eef2ae7c6e6f9db27d865eefec9">&#9670;&#160;</a></span>getBoundaryEdges()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structEdge.html">Edge</a> &gt; Mesh::getBoundaryEdges </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the boundary edges of the mesh. </p>
-<dl class="section return"><dt>Returns</dt><dd>A vector containing the boundary edges </dd></dl>
-
-</div>
-</div>
-<a id="a441754f11005e74da5e51978adcda8f5" name="a441754f11005e74da5e51978adcda8f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a441754f11005e74da5e51978adcda8f5">&#9670;&#160;</a></span>getEdgeValences()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; <a class="el" href="structEdge.html">Edge</a>, int, <a class="el" href="structEdgeHash.html">EdgeHash</a> &gt; Mesh::getEdgeValences </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the <a class="el" href="structEdge.html" title="A struct representing an edge in the mesh.">Edge</a> Valences object. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::unordered_map&lt;Edge, int, EdgeHash&gt; </dd></dl>
-
-</div>
-</div>
-<a id="a3682437e3218ed43fa1f63fad796225e" name="a3682437e3218ed43fa1f63fad796225e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3682437e3218ed43fa1f63fad796225e">&#9670;&#160;</a></span>loadObj()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Mesh::loadObj </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Load a mesh from an OBJ file using tinyobjloader. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Path to the OBJ file to load </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true </dd>
-<dd>
-false </dd></dl>
-
-</div>
-</div>
-<a id="a16a4868079b9a5bc5a3755484b48d267" name="a16a4868079b9a5bc5a3755484b48d267"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16a4868079b9a5bc5a3755484b48d267">&#9670;&#160;</a></span>smooth()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Mesh::smooth </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>iterations</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>lambda</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Smooth the mesh by iteratively moving each vertex towards the centroid of its neighbors. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">iterations</td><td>Number of smoothing iterations to perform </td></tr>
-    <tr><td class="paramname">lambda</td><td>Smoothing parameter (0 &lt; lambda &lt; 1) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/geometry/<a class="el" href="mesh_8h_source.html">mesh.h</a></li>
-<li>src/geometry/<b>mesh.cpp</b></li>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
+<li>include/mesh/<a class="el" href="mesh_8h_source.html">mesh.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

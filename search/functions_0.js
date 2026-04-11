@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addpoint_0',['addPoint',['../classDelaunay.html#a8fa8f652b28b90d4cf7dd7131eb2ee3a',1,'Delaunay']]],
-  ['analyzemesh_1',['analyzeMesh',['../classMesh.html#a72e5799cfca3db4b75390222190d0890',1,'Mesh']]]
+  ['containsedge_0',['containsEdge',['../structTriangle.html#a5971f999cac7015aae6b42920600adfc',1,'Triangle']]],
+  ['containspoint_1',['containsPoint',['../structTriangle.html#a4f815ba7a0893d9a34f1221a208e71b5',1,'Triangle']]]
 ];
