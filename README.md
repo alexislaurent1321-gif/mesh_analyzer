@@ -120,12 +120,13 @@ We observe a better average aspect ratio. However, this result can be further im
 
 # Upcoming changes
 ### as soon as possible
-- Test triangulation on an irregular set of points
+- Refactoring the code (SRP)
 - manually generate and triangulate basic shapes (grid, cylinder, disc) in the `basic_shapes` file
-### in the short term
-- **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
 - **mesh refinement :** division of triangles with an incorrect aspect ratio
 ---> I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.
+- analyzer for tetrahedral meshes 
+### in the short term
+- **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
 - see Constrained Delaunay triangulation
 ### in the longer term
 - see advancing front method ([Advancing Front Grid
