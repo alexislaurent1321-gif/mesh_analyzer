@@ -22,6 +22,10 @@ Point Point::operator*(float scalar) const {
     return Point(x * scalar, y * scalar, z * scalar);
 }
 
+Point Point::operator/(float scalar) const {
+    return Point(x / scalar, y / scalar, z / scalar);
+}
+
 bool Point::operator==(const Point& other) const {
     return std::abs(x - other.x) < 1e-9 && std::abs(y - other.y) < 1e-9 && std::abs(z - other.z) < 1e-9;
 }

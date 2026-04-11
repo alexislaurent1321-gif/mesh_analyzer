@@ -13,6 +13,7 @@ add_library(mesh_analyzer
     src/mesh/mesh_smoothing.cpp
     src/mesh/mesh_basic_shapes.cpp
     src/mesh/mesh_triangulation.cpp
+    src/mesh/mesh_refine.cpp
 
     src/io/exportToVTK.cpp
     src/io/loadObj.cpp

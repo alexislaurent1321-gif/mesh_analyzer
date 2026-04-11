@@ -60,10 +60,12 @@ struct Point {
     Point operator-(const Point& other) const;
     Point operator+(const Point& other) const;
     Point operator*(float scalar) const;
+    Point operator/(float scalar) const;
     bool operator==(const Point& other) const;
     void operator+=(const Point& other);
     void operator/=(float scalar);
     void operator*=(float scalar);
+
     
     /**
      * @brief Overload the << operator to print the point's coordinates
