@@ -3,7 +3,7 @@
 # Mesh generation
 Start of a project to analyze a triangular mesh or create one using Delaunay. 
 
-This project is currently in the process of integrating 3D mesh management (created on **Gmsh**). 
+This project is currently in the process of integrating 3D mesh management (created on [Gmsh](https://gmsh.info/)). 
 
 The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the [Upcoming changes](#upcoming-changes) section.
 
