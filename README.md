@@ -10,12 +10,12 @@ The next step will be to implement more complex methods, such as constrained Del
 # Project structure
 
 ```bash
-+---demos           # demos main files to test different features of the project    
++---demos           # demo main files to test different features of the project    
 +---include
 |   +---extern      # extern libraries to parse files
-|   +---geometry    # geomatrical elements of a mesh
+|   +---geometry    # geometrical elements of a mesh
 |   +---io          # input/output : functions to load and export meshes
-|   \---mesh        # mesh class and function to process (smoothing, refining, trianglation)
+|   \---mesh        # mesh class and processing functions (smoothing, refining, trianglation)
 +---models
 +---scripts         # .bat and .sh files to compile and execute demos   
 \---src
