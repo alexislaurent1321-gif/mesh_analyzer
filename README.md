@@ -1,7 +1,7 @@
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/mesh_analyzer/)
 
 # Mesh generation
-Start of a project to analyze a triangular mesh or create one using Delaunay. 
+Start of a project to analyze a triangular mesh or create one using Delaunay. This project is currently in the process of integrating 3D mesh management (created on **Gmsh**). The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the “Upcoming changes” section.
 
 # Project structure
 The project is organized into the following folders: 
@@ -11,7 +11,7 @@ The project is organized into the following folders:
 
 
 # Features
-## Mesh analyzer (`demo/analyzer.cpp`)
+## Mesh analyzer (`demo/demo_analyzer.cpp`)
 The mesh analysis section allows you to view its attributes and detect/highlight edges.
 
 #### hashing
@@ -68,7 +68,7 @@ The results show that all edges are detected.
 
 
 
-## Delaunay triangulation (`demo/triangulation.cpp`)
+## Delaunay triangulation (`demo/demo_triangulation.cpp`)
 The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. 
 ### Test on a regular grid
 To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : 
@@ -86,7 +86,7 @@ mean aspect ratio : 1.20711
 The results are correct.
 
 
-## Smoothing (`demo/smoothing.cpp`)
+## Smoothing (`demo/demo_smoothing.cpp`)
 A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$. 
 
 $$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$
