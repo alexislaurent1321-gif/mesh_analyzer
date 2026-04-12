@@ -73,7 +73,7 @@ The results show that all edges are detected.
 
 
 ## Delaunay triangulation (`demo/demo_triangulation.cpp`)
-The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. 
+The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the [Bowyer-Watson](https://www.gorillasun.de/blog/bowyer-watson-algorithm-for-delaunay-triangulation/) algorithm. 
 ### Test on a regular grid
 To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : 
 ```
@@ -94,10 +94,6 @@ The results are correct.
 A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$. 
 
 $$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$
-
-if $\lambda = 1$, the new position corresponds simply to the mean of neighbourghs' positions :  
-
-$$v_i \longleftarrow \frac{1}{N_i}\sum_{j=1}^{N_i} v_j$$
 
 ### Boundaries conditions
 Using smoothing can improve the quality of a mesh, particularly that of flat 2D meshes. These meshes are always open, which poses a problem because all the vertices quickly converge toward the center to the point where the mesh may eventually disappear. The idea, therefore, is to avoid applying smoothing to the edge edges. 
