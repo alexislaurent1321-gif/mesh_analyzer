@@ -79,7 +79,7 @@ $(function() {
 Mesh generation</h1>
 <p>Start of a project to analyze a triangular mesh or create one using Delaunay.</p>
 <p>This project is currently in the process of integrating 3D mesh management (created on <b>Gmsh</b>).</p>
-<p>The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the <a class="el" href="#upcoming-changes">Upcoming changes</a> section.</p>
+<p>The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the Upcoming changes section.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Project structure</h1>
 <p>The project is organized into the following folders:</p><ul>
@@ -156,9 +156,9 @@ Boundaries conditions</h3>
 <div class="line">max aspect ratio : 3.65891</div>
 <div class="line">mean aspect ratio : 1.50397</div>
 </div><!-- fragment --><p> We observe a better average aspect ratio. However, this result can be further improved by refining certain triangles, which will be the next step in the project.</p>
-<h1 class="doxsection"><a class="anchor" id="upcoming-changes"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Upcoming changes</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 as soon as possible</h3>
 <ul>
 <li><b>tetrahedral mesh analysis :</b> for now, the <span class="tt">mesh</span> class has been converted to a template class, and the <span class="tt">tetrahedron</span> class has been created. The next step will be to add a parser for <span class="tt">.msh</span> files (to import meshes from <b>Gmsh</b>) and adapt the functions in <span class="tt">mesh_analyze</span> for the tetrahedral version.</li>
@@ -166,24 +166,24 @@ as soon as possible</h3>
 <li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.</li>
 <li>analyzer for tetrahedral meshes </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 in the short term</h3>
 <ul>
 <li><b>local mesh adjustments :</b> remove triangles from the mesh, especially if the model contains a hole or is not convex.</li>
 <li>see Constrained Delaunay triangulation </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 in the longer term</h3>
 <ul>
 <li>see advancing front method (<a href="http://ebrary.free.fr/Mesh%20Generation/Handbook_of_Grid_%20Generation,1999/chap17.pdf">Advancing Front Grid Generation</a>)</li>
 <li>implement Delaunay for tetrhedral meshes</li>
 <li><b>mesh simplification :</b> edge collapse (<a href="https://arxiv.org/pdf/2512.19959">A Comprehensive Guide to Mesh Simplification using Edge Collapse</a>) (maybe)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Compilation and execution</h1>
 <p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible.</p>
 <p>The demos can be run in the <span class="tt">scripts</span> folder. Scripts are named as follows : <span class="tt">run_{demo}.sh</span> for Linux or <span class="tt">run_{demo}.bat</span> for Windows.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Dependencies</h3>
 <ul>
 <li><a href="https://github.com/tinyobjloader/tinyobjloader">tinyobjloader</a> (included in the code)</li>
