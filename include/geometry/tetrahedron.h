@@ -1,3 +1,5 @@
+#ifndef TETRAHEDRON_H
+#define TETRAHEDRON_H
 
 #include <vector>
 #include <array>
@@ -13,7 +15,7 @@
 #include "geometry/point.h"
 #include "geometry/edge.h"
 
-struct tetrahedron {
+struct Tetrahedron {
     std::array<int, 4> v;   ///< Indices of the vertices that form the tetrahedron
     bool isBad = false;     ///< Flag used in Delaunay triangulation to mark tetrahedra that need to be removed
 
@@ -32,3 +34,5 @@ struct tetrahedron {
      */
     bool containsEdge(int v1, int v2) const;
 };
+
+#endif 

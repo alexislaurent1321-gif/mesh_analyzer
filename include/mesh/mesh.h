@@ -15,6 +15,7 @@
 #include "geometry/point.h"
 #include "geometry/edge.h"
 #include "geometry/triangle.h"
+#include "geometry/tetrahedron.h"
 
 
 
