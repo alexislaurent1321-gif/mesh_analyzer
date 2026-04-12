@@ -19,14 +19,14 @@
  * @param t 
  * @return float 
  */
-float calculateAspectRatio(const Mesh& mesh, const Triangle& t);
+float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t);
 
 
 /**
  * @brief  Calculate the aspect ratio for all triangles in the mesh and store them in the ratios vector
  * 
  */
-void calculateAspectRatios(Mesh& mesh);
+void calculateAspectRatios(Mesh<Triangle>& mesh);
 
 
 
@@ -37,14 +37,14 @@ void calculateAspectRatios(Mesh& mesh);
  * 
  * @return std::unordered_map<Edge, int, EdgeHash> 
  */
-std::unordered_map<Edge, int, EdgeHash> getEdgeValences(const Mesh& mesh);
+std::unordered_map<Edge, int, EdgeHash> getEdgeValences(const Mesh<Triangle>& mesh);
 
 
  /** 
  * @brief Get the boundary edges of the mesh
  * @return A vector containing the boundary edges
  */
-std::vector<Edge> getBoundaryEdges(const Mesh& mesh);
+std::vector<Edge> getBoundaryEdges(const Mesh<Triangle>& mesh);
 
 
  /**
@@ -52,7 +52,7 @@ std::vector<Edge> getBoundaryEdges(const Mesh& mesh);
  * 
  * @return number of unique edges in the mesh 
  */
-size_t countUniqueEdges(const Mesh& mesh);
+size_t countUniqueEdges(const Mesh<Triangle>& mesh);
 
 
 
@@ -62,7 +62,7 @@ size_t countUniqueEdges(const Mesh& mesh);
  * @brief  Analyze the mesh by printing out the number of vertices, triangles, and unique edges. Optionally, it could also calculate and print the aspect ratio of each triangle for quality analysis.
  * 
  */
-void analyzeMesh(Mesh& mesh);
+void analyzeMesh(Mesh<Triangle>& mesh);
 
 
 #endif  

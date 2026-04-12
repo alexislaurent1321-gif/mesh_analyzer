@@ -5,4 +5,4 @@
  * @param filename The name of the output VTK file
  * @param mesh The mesh object containing vertices, triangles, and quality ratios
 */
-void exportToVTK(const std::string& filename, const Mesh& mesh);
+void exportToVTK(const std::string& filename, const Mesh<Triangle>& mesh);

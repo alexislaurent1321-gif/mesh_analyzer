@@ -1,7 +1,7 @@
 #include "mesh/mesh_smoothing.h"
 
 
-void smooth(Mesh& mesh, int iterations, float lambda){
+void smooth(Mesh<Triangle>& mesh, int iterations, float lambda){
         
     // Build an adjacency list for the vertices based on the triangles
     std::unordered_map<int, std::unordered_set<int>> adjacency; 
@@ -15,7 +15,7 @@ void smooth(Mesh& mesh, int iterations, float lambda){
     }
 
     // Build the adjacency list
-    for (const auto& triangle : mesh.triangles) {
+    for (const auto& triangle : mesh.elements) {
         adjacency[triangle.v[0]].insert({triangle.v[1], triangle.v[2]});
         adjacency[triangle.v[1]].insert({triangle.v[0], triangle.v[2]});
         adjacency[triangle.v[2]].insert({triangle.v[0], triangle.v[1]});

@@ -1,7 +1,7 @@
 #include "io/exportToVTK.h"
 #include "mesh/mesh_analysis.h"
 
-void exportToVTK(const std::string& filename, const Mesh& mesh) {
+void exportToVTK(const std::string& filename, const Mesh<Triangle>& mesh) {
     std::ofstream file(filename);
     if (!file.is_open()) return;
 
@@ -17,12 +17,12 @@ void exportToVTK(const std::string& filename, const Mesh& mesh) {
         file << v.x << " " << v.y << " " << v.z << "\n";
 
     // Write cells (triangles + boundary edges)
-    size_t nT = mesh.triangles.size();
+    size_t nT = mesh.elements.size();
     size_t nB = boundaryEdges.size();
     file << "CELLS " << (nT + nB) << " " << (nT * 4 + nB * 3) << "\n";
     
-    for (const auto& t : mesh.triangles)
-        file << "3 " << t.v[0] << " " << t.v[1] << " " << t.v[2] << "\n";
+    for (const auto& triangle : mesh.elements)
+        file << "3 " << triangle.v[0] << " " << triangle.v[1] << " " << triangle.v[2] << "\n";
     for (const auto& e : boundaryEdges)
         file << "2 " << e.v1 << " " << e.v2 << "\n";
 

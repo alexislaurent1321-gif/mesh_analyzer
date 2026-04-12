@@ -12,7 +12,7 @@
  * @param Lx The length of the grid in the x-direction
  * @param Ly The length of the grid in the y-direction
  */
-void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly);
+void generateGrid(Mesh<Triangle>& mesh, int Nx, int Ny, float Lx, float Ly);
 
 
 /** 
@@ -22,6 +22,6 @@ void generateGrid(Mesh& mesh, int Nx, int Ny, float Lx, float Ly);
  * @param Lx The width of the bounding box
  * @param Ly The height of the bounding box
  */
-void generateRandomPoints(Mesh& mesh, int N, float Lx, float Ly);
+void generateRandomPoints(Mesh<Triangle>& mesh, int N, float Lx, float Ly);
 
 #endif

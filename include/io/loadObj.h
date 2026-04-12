@@ -7,4 +7,4 @@
  * @return true 
  * @return false 
  */
-bool loadObj(Mesh& mesh, const std::string& path);
+bool loadObj(Mesh<Triangle>& mesh, const std::string& path);

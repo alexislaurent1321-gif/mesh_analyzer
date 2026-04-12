@@ -5,7 +5,7 @@
 
 #include "io/loadObj.h"
 
-bool loadObj(Mesh& mesh, const std::string& path) {
+bool loadObj(Mesh<Triangle>& mesh, const std::string& path) {
     tinyobj::ObjReaderConfig reader_config; // Create a reader configuration object (optional)
     tinyobj::ObjReader reader;              // Create an ObjReader object to read the OBJ file
 
@@ -36,7 +36,7 @@ bool loadObj(Mesh& mesh, const std::string& path) {
             for (size_t v = 0; v < fv; ++v) {
                 triangle.v[v] = shape.mesh.indices[index_offset + v].vertex_index;
             }
-            mesh.triangles.push_back(triangle);
+            mesh.elements.push_back(triangle);
 
             index_offset += fv; // Move to the next face
         }

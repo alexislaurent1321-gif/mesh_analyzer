@@ -4,6 +4,6 @@
 #include "mesh/mesh.h"
 #include "mesh/mesh_analysis.h"
 
-void refine(Mesh& mesh, int iterations);
+void refine(Mesh<Triangle>& mesh, int iterations);
 
 #endif 

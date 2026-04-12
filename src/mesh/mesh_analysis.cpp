@@ -2,11 +2,11 @@
 
 #include "mesh/mesh_analysis.h"
 
-size_t countUniqueEdges(const Mesh& mesh) {
+size_t countUniqueEdges(const Mesh<Triangle>& mesh) {
     std::unordered_set<Edge, EdgeHash> uniqueEdges; // Use an unordered_set to store unique edges
     
     // Iterate through all triangles and add their edges to the set
-    for (const auto& t : mesh.triangles) {
+    for (const auto& t : mesh.elements) {
         for (int i = 0; i < 3; ++i) {
             int v1 = t.v[i];
             int v2 = t.v[(i + 1) % 3];
@@ -19,7 +19,7 @@ size_t countUniqueEdges(const Mesh& mesh) {
 }
 
 
-float calculateAspectRatio(const Mesh& mesh, const Triangle& t)  {
+float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t)  {
     // triangle lengths
     float a = mesh.vertices[t.v[0]].distance(mesh.vertices[t.v[1]]);
     float b = mesh.vertices[t.v[1]].distance(mesh.vertices[t.v[2]]);
@@ -32,20 +32,20 @@ float calculateAspectRatio(const Mesh& mesh, const Triangle& t)  {
 }
 
 
-void calculateAspectRatios(Mesh& mesh) {
+void calculateAspectRatios(Mesh<Triangle>& mesh) {
     mesh.ratios.clear();
 
     // Calculate aspect ratio for each triangle and store in the ratios vector
-    for (const auto& t : mesh.triangles) {
+    for (const auto& t : mesh.elements) {
         mesh.ratios.push_back(calculateAspectRatio(mesh, t));
     }
 }
 
 
-void analyzeMesh(Mesh& mesh) {
+void analyzeMesh(Mesh<Triangle>& mesh) {
     // Basic info
     std::cout << "Vertices : " << mesh.vertices.size() << std::endl;
-    std::cout << "Triangles : " << mesh.triangles.size() << std::endl;
+    std::cout << "Triangles : " << mesh.elements.size() << std::endl;
     std::cout << "Unique edges : " << countUniqueEdges(mesh) << std::endl;
 
     // Aspect ratio analysis
@@ -56,10 +56,10 @@ void analyzeMesh(Mesh& mesh) {
 }
 
 
-std::unordered_map<Edge, int, EdgeHash> getEdgeValences(const Mesh& mesh) {
+std::unordered_map<Edge, int, EdgeHash> getEdgeValences(const Mesh<Triangle>& mesh) {
     std::unordered_map<Edge, int, EdgeHash> counts;     // Use an unordered_map to count occurrences of each edge
     
-    for (const auto& t : mesh.triangles) {
+    for (const auto& t : mesh.elements) {
         for (int i = 0; i < 3; ++i) {
             int v1 = t.v[i];
             int v2 = t.v[(i + 1) % 3];
@@ -73,7 +73,7 @@ std::unordered_map<Edge, int, EdgeHash> getEdgeValences(const Mesh& mesh) {
 }
 
 
-std::vector<Edge> getBoundaryEdges(const Mesh& mesh) {
+std::vector<Edge> getBoundaryEdges(const Mesh<Triangle>& mesh) {
     auto edgeCounts = getEdgeValences(mesh);    // Get the valence counts for all edges
     std::vector<Edge> boundaryEdges;        // Collect edges that belong to only one triangle (valence = 1)
     

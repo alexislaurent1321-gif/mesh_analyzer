@@ -1,7 +1,7 @@
 #include "mesh/mesh_triangulation.h"
 
 
-Triangle createSuperTriangle(Mesh& mesh) {
+Triangle createSuperTriangle(Mesh<Triangle>& mesh) {
 
     float minX = 1e7f;
     float minY = 1e7f;
@@ -38,7 +38,7 @@ Triangle createSuperTriangle(Mesh& mesh) {
 }
 
 
- void addPoint(Mesh& mesh, const Point& point) {
+ void addPoint(Mesh<Triangle>& mesh, const Point& point) {
 
     // Add the new point to the mesh and get its index
     int pointIndex = mesh.vertices.size();
@@ -46,7 +46,7 @@ Triangle createSuperTriangle(Mesh& mesh) {
 
     // Find all triangles whose circumcircle contains the new point
     std::vector<Triangle> badTriangles;
-    for (auto& triangle : mesh.triangles) {
+    for (auto& triangle : mesh.elements) {
         if (triangle.containsPoint(mesh.vertices, point)) {
             triangle.isBad = true;
             badTriangles.push_back(triangle);
@@ -79,28 +79,28 @@ Triangle createSuperTriangle(Mesh& mesh) {
     }
 
     // Remove the bad triangles from the mesh
-    mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
-                    [](const Triangle& triangle){ return triangle.isBad; }), mesh.triangles.end());
+    mesh.elements.erase(std::remove_if(mesh.elements.begin(), mesh.elements.end(), 
+                    [](const Triangle& triangle){ return triangle.isBad; }), mesh.elements.end());
 
     // Retriangulate the polygonal hole by connecting the new point to the vertices of the polygon
     for (const auto& edge : polygon) {
-        mesh.triangles.push_back({edge.v1, edge.v2, pointIndex});
+        mesh.elements.push_back({edge.v1, edge.v2, pointIndex});
     }
 }
 
 
-void cleanup(Mesh& mesh, Triangle superTriangle) {
+void cleanup(Mesh<Triangle>& mesh, Triangle superTriangle) {
     // Remove triangles that include the vertices of the super-triangle
-    mesh.triangles.erase(std::remove_if(mesh.triangles.begin(), mesh.triangles.end(), 
+    mesh.elements.erase(std::remove_if(mesh.elements.begin(), mesh.elements.end(), 
         [=](const Triangle& triangle) {
             return (triangle.v[0] == superTriangle.v[0] || triangle.v[0] == superTriangle.v[1] || triangle.v[0] == superTriangle.v[2] ||
                     triangle.v[1] == superTriangle.v[0] || triangle.v[1] == superTriangle.v[1] || triangle.v[1] == superTriangle.v[2] ||
                     triangle.v[2] == superTriangle.v[0] || triangle.v[2] == superTriangle.v[1] || triangle.v[2] == superTriangle.v[2]);
-        }), mesh.triangles.end());
+        }), mesh.elements.end());
 
 
     // Adjust vertex indices in the remaining triangles to account for the removed super-triangle vertices
-    for(auto& triangle : mesh.triangles) {
+    for(auto& triangle : mesh.elements) {
         for (int i = 0; i < 3; ++i) {
             triangle.v[i] = triangle.v[i] - 3; 
         }
@@ -111,16 +111,16 @@ void cleanup(Mesh& mesh, Triangle superTriangle) {
 }
 
 
-void triangulate(Mesh& mesh) {
+void triangulate(Mesh<Triangle>& mesh) {
 
     std::vector<Point> tmp_vertices = mesh.vertices; // Store the original vertices before adding the super-triangle vertices
 
     mesh.vertices.clear(); // Clear the mesh vertices to start fresh with the super-triangle and the original vertices
-    mesh.triangles.clear(); // Clear the mesh triangles to start fresh
+    mesh.elements.clear(); // Clear the mesh elements to start fresh
 
     // Start with a super-triangle that encompasses all vertices
     Triangle superTriangle = createSuperTriangle(mesh);
-    mesh.triangles.push_back(superTriangle);
+    mesh.elements.push_back(superTriangle);
 
     // Add each vertex to the triangulation
     for (const auto& vertex : tmp_vertices) {

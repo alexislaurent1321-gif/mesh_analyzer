@@ -1,10 +1,10 @@
 #include "mesh/mesh_refine.h"
 
-void refine(Mesh& mesh, int iterations){
+void refine(Mesh<Triangle>& mesh, int iterations){
     for (int iter = 0; iter < iterations; ++iter) {
         std::vector<Triangle> newTriangles;
 
-        for (const auto& triangle : mesh.triangles) {
+        for (const auto& triangle : mesh.elements) {
 
             if(calculateAspectRatio(mesh, triangle) < 2.f) {
                 continue; // Skip refinement for this triangle
@@ -37,7 +37,7 @@ void refine(Mesh& mesh, int iterations){
         }
 
         for(const auto& triangle : newTriangles) {
-            mesh.triangles.push_back(triangle);
+            mesh.elements.push_back(triangle);
         }
     }
 }

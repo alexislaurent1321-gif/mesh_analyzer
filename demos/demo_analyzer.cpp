@@ -13,7 +13,7 @@
 
 int main() {
     
-    Mesh mesh;
+    Mesh<Triangle> mesh;
 
     if (!loadObj(mesh, "models/demi_sphere_broken.obj")) {
         std::cerr << "Error loading OBJ file." << std::endl;

@@ -17,7 +17,7 @@ int main() {
     // Triangulation test on a grid
 
     // Example of generating a grid mesh and exporting it
-    Mesh gridMesh;
+    Mesh<Triangle> gridMesh;
     generateGrid(gridMesh, 5, 5, 1.f, 1.f);
 
     triangulate(gridMesh); // Perform Delaunay triangulation on the grid mesh

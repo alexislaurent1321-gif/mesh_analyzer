@@ -6,4 +6,4 @@
  * @param iterations Number of smoothing iterations to perform
  * @param lambda Smoothing parameter (0 < lambda < 1)
  */
-void smooth(Mesh& mesh, int iterations, float lambda);
+void smooth(Mesh<Triangle>& mesh, int iterations, float lambda);
