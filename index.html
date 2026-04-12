@@ -82,14 +82,14 @@ Mesh generation</h1>
 <p>The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the Upcoming changes section.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Project structure</h1>
-<div class="fragment"><div class="line">+---demos               </div>
+<div class="fragment"><div class="line">+---demos           # demos main files to test different features of the project    </div>
 <div class="line">+---include</div>
 <div class="line">|   +---extern      # extern libraries to parse files</div>
 <div class="line">|   +---geometry    # geomatrical elements of a mesh</div>
 <div class="line">|   +---io          # input/output : functions to load and export meshes</div>
 <div class="line">|   \---mesh        # mesh class and function to process (smoothing, refining, trianglation)</div>
 <div class="line">+---models</div>
-<div class="line">+---scripts</div>
+<div class="line">+---scripts         # .bat and .sh files to compile and execute demos   </div>
 <div class="line">\---src</div>
 <div class="line">    +---geometry</div>
 <div class="line">    +---io</div>
