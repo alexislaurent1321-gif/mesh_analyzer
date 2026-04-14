@@ -1,17 +1,32 @@
 [![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/mesh_analyzer/)
 
 # Mesh generation
-Start of a project to analyze a triangular mesh or create one using Delaunay. 
+Project to analyze a triangular mesh or create one using Delaunay. 
+
+This project is currently in the process of integrating 3D mesh management (created on [Gmsh](https://gmsh.info/)). 
+
+The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the [Upcoming changes](#upcoming-changes) section.
 
 # Project structure
-The project is organized into the following folders: 
-- **geometry :** contains classes for points, triangles, meshes and edges
-- **processing :** contains classes for generating grids or triangulate a set of vertices
-- **visualization :** contains the export in VTK format for ParaView
+
+```bash
++---demos           # demo main files to test different features of the project    
++---include
+|   +---extern      # extern libraries to parse files
+|   +---geometry    # geometrical elements of a mesh
+|   +---io          # input/output : functions to load and export meshes
+|   \---mesh        # mesh class and processing functions (smoothing, refining, trianglation)
++---models
++---scripts         # .bat and .sh files to compile and execute demos   
+\---src
+    +---geometry
+    +---io
+    \---mesh
+```
 
 
 # Features
-## Mesh analyzer (`demo/analyzer.cpp`)
+## Mesh analyzer (`demo/demo_analyzer.cpp`)
 The mesh analysis section allows you to view its attributes and detect/highlight edges.
 
 #### hashing
@@ -68,8 +83,8 @@ The results show that all edges are detected.
 
 
 
-## Delaunay triangulation (`demo/triangulation.cpp`)
-The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the Bowyer-Watson algorithm. 
+## Delaunay triangulation (`demo/demo_triangulation.cpp`)
+The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the [Bowyer-Watson](https://www.gorillasun.de/blog/bowyer-watson-algorithm-for-delaunay-triangulation/) algorithm. 
 ### Test on a regular grid
 To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : 
 ```
@@ -86,14 +101,10 @@ mean aspect ratio : 1.20711
 The results are correct.
 
 
-## Smoothing (`demo/smoothing.cpp`)
+## Smoothing (`demo/demo_smoothing.cpp`)
 A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$. 
 
 $$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$
-
-if $\lambda = 1$, the new position corresponds simply to the mean of neighbourghs' positions :  
-
-$$v_i \longleftarrow \frac{1}{N_i}\sum_{j=1}^{N_i} v_j$$
 
 ### Boundaries conditions
 Using smoothing can improve the quality of a mesh, particularly that of flat 2D meshes. These meshes are always open, which poses a problem because all the vertices quickly converge toward the center to the point where the mesh may eventually disappear. The idea, therefore, is to avoid applying smoothing to the edge edges. 
@@ -120,7 +131,7 @@ We observe a better average aspect ratio. However, this result can be further im
 
 # Upcoming changes
 ### as soon as possible
-- Refactoring the code (SRP)
+- **tetrahedral mesh analysis :** for now, the `mesh` class has been converted to a template class, and the `tetrahedron` class has been created. The next step will be to add a parser for `.msh` files (to import meshes from **Gmsh**) and adapt the functions in `mesh_analyze` for the tetrahedral version.
 - manually generate and triangulate basic shapes (grid, cylinder, disc) in the `basic_shapes` file
 - **mesh refinement :** division of triangles with an incorrect aspect ratio
 ---> I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.
@@ -131,7 +142,7 @@ We observe a better average aspect ratio. However, this result can be further im
 ### in the longer term
 - see advancing front method ([Advancing Front Grid
 Generation](http://ebrary.free.fr/Mesh%20Generation/Handbook_of_Grid_%20Generation,1999/chap17.pdf))
-- support for 3D meshes **(tetrahedral)** : analyzer, boundaries detection, Delaunay, advancing front method
+- implement Delaunay for tetrhedral meshes
 - **mesh simplification :** edge collapse ([A Comprehensive Guide to Mesh Simplification
 using Edge Collapse](https://arxiv.org/pdf/2512.19959)) (maybe)
 
