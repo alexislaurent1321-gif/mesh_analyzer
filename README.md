@@ -10,9 +10,9 @@ The next step will be to implement more complex methods, such as constrained Del
 # Project structure
 
 ```bash
-+---demos           # demo main files to test different features of the project    
-+---include
-|   +---extern      # extern libraries to parse files
++---demos           # demo main files to test different features of the project
++---extern          # extern libraries to parse files (submoules)
++---include 
 |   +---geometry    # geometrical elements of a mesh
 |   +---io          # input/output : functions to load and export meshes
 |   \---mesh        # mesh class and processing functions (smoothing, refining, trianglation)
@@ -22,6 +22,9 @@ The next step will be to implement more complex methods, such as constrained Del
     +---geometry
     +---io
     \---mesh
+
+
+
 ```
 
 
@@ -148,11 +151,16 @@ using Edge Collapse](https://arxiv.org/pdf/2512.19959)) (maybe)
 
 
 # Compilation and execution
+To clone the project : 
+```bash
+git clone --recurse-submodules https://github.com/alexislaurent1321-gif/mesh_analyzer.git
+```
 
 Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible.
 
 The demos can be run in the `scripts` folder. Scripts are named as follows : `run_{demo}.sh` for Linux or `run_{demo}.bat` for Windows.
 
 ### Dependencies
-- [tinyobjloader](https://github.com/tinyobjloader/tinyobjloader) (included in the code)
+- [mshio](https://github.com/qnzhou/MshIO.git)
+- [tinyobjloader](https://github.com/tinyobjloader/tinyobjloader.git) 
 - [ParaView](https://www.paraview.org/)
