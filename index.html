@@ -82,9 +82,9 @@ Mesh generation</h1>
 <p>The next step will be to implement more complex methods, such as constrained Delaunay. For more information, see the Upcoming changes section.</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Project structure</h1>
-<div class="fragment"><div class="line">+---demos           # demo main files to test different features of the project    </div>
-<div class="line">+---include</div>
-<div class="line">|   +---extern      # extern libraries to parse files</div>
+<div class="fragment"><div class="line">+---demos           # demo main files to test different features of the project</div>
+<div class="line">+---extern          # extern libraries to parse files (submoules)</div>
+<div class="line">+---include </div>
 <div class="line">|   +---geometry    # geometrical elements of a mesh</div>
 <div class="line">|   +---io          # input/output : functions to load and export meshes</div>
 <div class="line">|   \---mesh        # mesh class and processing functions (smoothing, refining, trianglation)</div>
@@ -185,12 +185,14 @@ in the longer term</h3>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Compilation and execution</h1>
-<p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible.</p>
+<p>To clone the project : </p><div class="fragment"><div class="line">git clone --recurse-submodules https://github.com/alexislaurent1321-gif/mesh_analyzer.git</div>
+</div><!-- fragment --><p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible.</p>
 <p>The demos can be run in the <span class="tt">scripts</span> folder. Scripts are named as follows : <span class="tt">run_{demo}.sh</span> for Linux or <span class="tt">run_{demo}.bat</span> for Windows.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Dependencies</h3>
 <ul>
-<li><a href="https://github.com/tinyobjloader/tinyobjloader">tinyobjloader</a> (included in the code)</li>
+<li><a href="https://github.com/qnzhou/MshIO.git">mshio</a></li>
+<li><a href="https://github.com/tinyobjloader/tinyobjloader.git">tinyobjloader</a></li>
 <li><a href="https://www.paraview.org/">ParaView</a> </li>
 </ul>
 </div></div><!-- PageDoc -->
