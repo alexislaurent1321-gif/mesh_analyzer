@@ -130,10 +130,14 @@ Boundaries detection</h4>
 <p>The example used here is a hemisphere with some missing faces. Part of the edge, as well as two triangles sharing a common vertex, have been removed.</p>
 <p><img src="https://github.com/user-attachments/assets/171883d1-4b31-4704-8ced-66f49e6d964d" alt="demi_sphere_boundaries" width="600" height="400" style="width:50%;" class="inline"/></p>
 <p>The results show that all edges are detected.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+3D version : <span class="tt">demo_analyzer3D</span> (in progress ...) :</h3>
+<p>This demo will involve doing the same thing on a tetrahedral mesh. For now, it allows you to load an .msh file (modern format 4.1) and export it to ParaView. The parser was chosen based on the library <a href="https://github.com/qnzhou/MshIO.git">mshio</a> by qnzhou. Gmsh's Modern Format requires manually converting the format's tags into element indices.</p>
+<p><img src="https://github.com/user-attachments/assets/c2b71c88-b882-428e-9f35-eb5f816d0186" alt="sphere" width="1209" height="600" style="width:50%;" class="inline"/></p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Delaunay triangulation (<span class="tt">demo/demo_triangulation.cpp</span>)</h2>
 <p>The final feature, which will be at the heart of the project, involves triangulating a set of points using the Delaunay method. The algorithm used here is the <a href="https://www.gorillasun.de/blog/bowyer-watson-algorithm-for-delaunay-triangulation/">Bowyer-Watson</a> algorithm. </p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Test on a regular grid</h3>
 <p>To validate the triangulation, we count the number of triangles and edges and check the ratio. Since the mesh is a grid, we expect a constant ratio of $\simeq 1.2$. Here are the results for a $4\times 4$ cells ($5 \times 5$ points) grid : </p><div class="fragment"><div class="line">Vertices : 25</div>
 <div class="line">Triangles : 32</div>
@@ -143,11 +147,11 @@ Test on a regular grid</h3>
 <div class="line">mean aspect ratio : 1.20711</div>
 </div><!-- fragment --><p><img src="https://github.com/user-attachments/assets/53eee18e-3077-4b87-9eea-634a993a1e06" alt="grid_triangulated" width="1209" height="600" style="width:50%;" class="inline"/></p>
 <p>The results are correct.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Smoothing (<span class="tt">demo/demo_smoothing.cpp</span>)</h2>
 <p>A useful method for improving the regularity of a mesh is to apply smoothing. The function depends here on the number of iterations and a factor $\lambda$.</p>
 <p>$$v_i \longleftarrow v_i + \lambda \left( \frac{1}{N_i}\sum_{j=1}^{N_i} v_j - v_i \right)$$</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Boundaries conditions</h3>
 <p>Using smoothing can improve the quality of a mesh, particularly that of flat 2D meshes. These meshes are always open, which poses a problem because all the vertices quickly converge toward the center to the point where the mesh may eventually disappear. The idea, therefore, is to avoid applying smoothing to the edge edges.</p>
 <p>Here, we take the example of a random set of points that we triangulate and then apply smoothing (until the result stops changing) to:</p>
@@ -160,35 +164,33 @@ Boundaries conditions</h3>
 <div class="line">max aspect ratio : 3.65891</div>
 <div class="line">mean aspect ratio : 1.50397</div>
 </div><!-- fragment --><p> We observe a better average aspect ratio. However, this result can be further improved by refining certain triangles, which will be the next step in the project.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Upcoming changes</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 as soon as possible</h3>
 <ul>
-<li><b>tetrahedral mesh analysis :</b> for now, the <span class="tt">mesh</span> class has been converted to a template class, and the <span class="tt">tetrahedron</span> class has been created. The next step will be to add a parser for <span class="tt">.msh</span> files (to import meshes from <b>Gmsh</b>) and adapt the functions in <span class="tt">mesh_analyze</span> for the tetrahedral version.</li>
-<li>manually generate and triangulate basic shapes (grid, cylinder, disc) in the <span class="tt">basic_shapes</span> file</li>
-<li><b>mesh refinement :</b> division of triangles with an incorrect aspect ratio ---&gt; I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.</li>
-<li>analyzer for tetrahedral meshes </li>
+<li>Finish the demo for 3D mesh analysis</li>
+<li>manually generate and triangulate basic shapes (grid, cylinder, disc) in the <span class="tt">basic_shapes</span> file </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 in the short term</h3>
 <ul>
 <li><b>local mesh adjustments :</b> remove triangles from the mesh, especially if the model contains a hole or is not convex.</li>
 <li>see Constrained Delaunay triangulation </li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 in the longer term</h3>
 <ul>
 <li>see advancing front method (<a href="http://ebrary.free.fr/Mesh%20Generation/Handbook_of_Grid_%20Generation,1999/chap17.pdf">Advancing Front Grid Generation</a>)</li>
 <li>implement Delaunay for tetrhedral meshes</li>
 <li><b>mesh simplification :</b> edge collapse (<a href="https://arxiv.org/pdf/2512.19959">A Comprehensive Guide to Mesh Simplification using Edge Collapse</a>) (maybe)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Compilation and execution</h1>
 <p>To clone the project : </p><div class="fragment"><div class="line">git clone --recurse-submodules https://github.com/alexislaurent1321-gif/mesh_analyzer.git</div>
 </div><!-- fragment --><p>Compilation on Windows (preferably with <b>MSVC</b>) or Linux. Use the <b>VS Code</b> interface if possible.</p>
 <p>The demos can be run in the <span class="tt">scripts</span> folder. Scripts are named as follows : <span class="tt">run_{demo}.sh</span> for Linux or <span class="tt">run_{demo}.bat</span> for Windows.</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Dependencies</h3>
 <ul>
 <li><a href="https://github.com/qnzhou/MshIO.git">mshio</a></li>

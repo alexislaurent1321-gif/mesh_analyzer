@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ratio_0',['Aspect ratio',['../index.html#autotoc_md6',1,'']]],
-  ['ratios_1',['ratios',['../classMesh.html#a742d460aaf9322b1ab64defc4b3fdd0a',1,'Mesh']]],
-  ['regular_20grid_2',['Test on a regular grid',['../index.html#autotoc_md9',1,'']]]
+  ['on_20a_20regular_20grid_0',['Test on a regular grid',['../index.html#autotoc_md10',1,'']]],
+  ['operator_3c_3c_1',['operator&lt;&lt;',['../structPoint.html#ab322db2b5457c54c9b959c6336792d2d',1,'Point']]]
 ];

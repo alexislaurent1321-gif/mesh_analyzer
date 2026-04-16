@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hashing_0',['hashing',['../index.html#autotoc_md4',1,'']]]
+  ['features_0',['Features',['../index.html#autotoc_md2',1,'']]]
 ];
