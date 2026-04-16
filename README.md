@@ -84,6 +84,10 @@ The example used here is a hemisphere with some missing faces. Part of the edge,
 
 The results show that all edges are detected.
 
+### 3D version : `demo_analyzer3D` (in progress ...) : 
+This demo will involve doing the same thing on a tetrahedral mesh. For now, it allows you to load an .msh file (modern format 4.1) and export it to ParaView. The parser was chosen based on the library [mshio](https://github.com/qnzhou/MshIO.git) by qnzhou. Gmsh's Modern Format requires manually converting the format's tags into element indices.
+
+<img width="1209" height="600" alt="sphere" src="https://github.com/user-attachments/assets/c2b71c88-b882-428e-9f35-eb5f816d0186" style="width:50%;"/>
 
 
 ## Delaunay triangulation (`demo/demo_triangulation.cpp`)
@@ -134,11 +138,8 @@ We observe a better average aspect ratio. However, this result can be further im
 
 # Upcoming changes
 ### as soon as possible
-- **tetrahedral mesh analysis :** for now, the `mesh` class has been converted to a template class, and the `tetrahedron` class has been created. The next step will be to add a parser for `.msh` files (to import meshes from **Gmsh**) and adapt the functions in `mesh_analyze` for the tetrahedral version.
+- Finish the demo for 3D mesh analysis
 - manually generate and triangulate basic shapes (grid, cylinder, disc) in the `basic_shapes` file
-- **mesh refinement :** division of triangles with an incorrect aspect ratio
----> I could use these features to create a small project based on an irregular grid. The first step would be to refine the triangles with poor aspect ratios and then apply the smoothing function to improve the overall regularity of the mesh.
-- analyzer for tetrahedral meshes 
 ### in the short term
 - **local mesh adjustments :** remove triangles from the mesh, especially if the model contains a hole or is not convex.
 - see Constrained Delaunay triangulation
