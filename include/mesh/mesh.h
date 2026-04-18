@@ -24,11 +24,7 @@
  * 
  */
 template <typename ElementType>
-class Mesh {
-public:
-
-    const size_t elementType = elements[0].elementType;          ///< Gmsh element type (2 for triangles, 4 for tetrahedra)
-    const size_t elementNumVertices = elements[0].numVertices;   ///< Number of vertices per element (3 for triangles, 4 for tetrahedra)
+struct Mesh {
 
     // Datas
     std::vector<Point> vertices;            ///< List of vertices in the mesh
