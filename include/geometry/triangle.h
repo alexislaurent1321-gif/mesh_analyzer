@@ -23,7 +23,7 @@ struct Triangle {
 
     std::array<size_t, 3> v;   ///< Indices of the vertices that form the triangle
     bool isBad = false;     ///< Flag used in Delaunay triangulation to mark triangles that need to be removed
-    
+
 
     /**
      * @brief  Check if the circum circle of the triangle contains a specific edge defined by two vertex indices

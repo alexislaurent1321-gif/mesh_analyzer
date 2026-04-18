@@ -23,6 +23,7 @@ struct Tetrahedron {
     std::array<size_t, 4> v;   ///< Indices of the vertices that form the tetrahedron
     bool isBad = false;     ///< Flag used in Delaunay triangulation to mark tetrahedra that need to be removed
 
+
     /**
      * @brief Check if the circumsphere of the tetrahedron contains a specific point
      * @param vertices The list of vertices in the mesh
@@ -30,6 +31,7 @@ struct Tetrahedron {
      * @return true if P is inside the circumsphere, false otherwise
      */
     bool containsPoint(const std::vector<Point>& vertices, const Point& P);
+
 
     /**
      * @brief Check if the circumsphere of the tetrahedron contains a specific edge defined by two vertex indices

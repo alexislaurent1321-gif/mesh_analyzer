@@ -38,11 +38,12 @@ bool loadMsh(Mesh<T>& mesh, const std::string& path) {
         const size_t stride = 1 + nodesPerElem; 
 
         for (size_t i = 0; i < entity_block.num_elements_in_block; ++i) {
-            std::array<size_t, T::numVertices> indices;
+
+            T element;
             for (size_t j = 0; j < nodesPerElem; ++j) {
-                indices[j] = tagToIndex[entity_block.data[i * stride + (j + 1)]];
+                element.v[j] = tagToIndex[entity_block.data[i * stride + (j + 1)]];
             }
-            mesh.elements.push_back({indices[0], indices[1], indices[2], indices[3]});
+            mesh.elements.emplace_back(element);
         }
     }
 
