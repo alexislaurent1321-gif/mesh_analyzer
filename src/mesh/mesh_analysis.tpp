@@ -25,6 +25,23 @@ size_t countUniqueEdges(const Mesh<T>& mesh) {
 }
 
 
+template <typename T>
+size_t countUniqueTriangles(const Mesh<T>& mesh) {
+    std::unordered_set<Triangle, TriangleHash> uniqueTriangles; // Use an unordered_set to store unique triangles   
+    // Iterate through all tetrahedra and add their triangles to the set
+    for (const auto& t : mesh.elements) {
+        for (size_t i = 0; i < T::numVertices; ++i) {
+            size_t v1 = t.v[i];
+            size_t v2 = t.v[(i + 1) % T::numVertices];
+            size_t v3 = t.v[(i + 2) % T::numVertices];
+            // Store triangles in a consistent order to avoid duplicates
+            uniqueTriangles.insert({std::min({v1, v2, v3}), std::min({std::max(v1, v2), std::max(v2, v3), std::max(v3, v1)}), std::max({v1, v2, v3})}); 
+        }
+    }
+    return uniqueTriangles.size();
+}
+
+
 template <>
 float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t)  {
     // triangle lengths
@@ -84,15 +101,30 @@ void calculateAspectRatios(Mesh<T>& mesh) {
 
 // Display analysis
 
-template <typename T>
-void analyzeMesh(Mesh<T>& mesh) {
+template <>
+void analyzeMesh(Mesh<Triangle>& mesh) {
     // Basic info
     std::cout << "Vertices : " << mesh.vertices.size() << std::endl;
     std::cout << "Elements : " << mesh.elements.size() << std::endl;
-    std::cout << "Unique edges : " << countUniqueEdges<T>(mesh) << std::endl;
+    std::cout << "Unique edges : " << countUniqueEdges<Triangle>(mesh) << std::endl;
 
     // Aspect ratio analysis
-    calculateAspectRatios<T>(mesh);
+    calculateAspectRatios<Triangle>(mesh);
+    std::cout << "min aspect ratio : " << *std::min_element(mesh.ratios.begin(), mesh.ratios.end()) << std::endl;
+    std::cout << "max aspect ratio : " << *std::max_element(mesh.ratios.begin(), mesh.ratios.end()) << std::endl;
+    std::cout << "mean aspect ratio : " << std::accumulate(mesh.ratios.begin(), mesh.ratios.end(), 0.f) / mesh.ratios.size() << std::endl;
+}
+
+
+template <>
+void analyzeMesh(Mesh<Tetrahedron>& mesh) {
+    // Basic info
+    std::cout << "Vertices : " << mesh.vertices.size() << std::endl;
+    std::cout << "Elements : " << mesh.elements.size() << std::endl;
+    std::cout << "Unique triangles : " << countUniqueTriangles<Tetrahedron>(mesh) << std::endl;
+
+    // Aspect ratio analysis
+    calculateAspectRatios<Tetrahedron>(mesh);
     std::cout << "min aspect ratio : " << *std::min_element(mesh.ratios.begin(), mesh.ratios.end()) << std::endl;
     std::cout << "max aspect ratio : " << *std::max_element(mesh.ratios.begin(), mesh.ratios.end()) << std::endl;
     std::cout << "mean aspect ratio : " << std::accumulate(mesh.ratios.begin(), mesh.ratios.end(), 0.f) / mesh.ratios.size() << std::endl;

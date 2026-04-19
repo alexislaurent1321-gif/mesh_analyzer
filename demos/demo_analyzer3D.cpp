@@ -10,19 +10,9 @@
  int main() {
     Mesh<Tetrahedron> mesh;
     loadMsh<Tetrahedron>(mesh, "models/sphere.msh");
-    // exportToVTK("output.vtk", mesh);
+    exportToVTK("output.vtk", mesh);
   
-    size_t uniqueEdges = countUniqueEdges<Tetrahedron>(mesh);
-    std::cout << "Number of unique edges: " << uniqueEdges << std::endl;
-
-    // Mesh<Triangle> mesh;
-    // loadMsh<Triangle>(mesh, "models/disk.msh");
-    
-    // size_t uniqueEdges = countUniqueEdges<Triangle>(mesh);
-    // analyzeMesh<Triangle>(mesh);
-    // std::cout << "Number of unique edges: " << uniqueEdges << std::endl;
-
-    // exportToVTK("output.vtk", mesh);
+    analyzeMesh<Tetrahedron>(mesh);
 
    return 0;
  }

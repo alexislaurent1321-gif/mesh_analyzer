@@ -42,11 +42,25 @@ void calculateAspectRatios(Mesh<T>& mesh);
 std::unordered_map<Edge, size_t, EdgeHash> getEdgeValences(const Mesh<Triangle>& mesh);
 
 
+/** 
+ * @brief Get the triangle valences of the mesh
+ * @return A map containing the valence of each triangle
+ */
+std::unordered_map<Triangle, size_t, TriangleHash> getTriangleValences(const Mesh<Tetrahedron>& mesh);
+
+
  /** 
  * @brief Get the boundary edges of the mesh
  * @return A vector containing the boundary edges
  */
 std::vector<Edge> getBoundaryEdges(const Mesh<Triangle>& mesh);
+
+
+/** 
+ * @brief Get the boundary triangles of the mesh
+ * @return A vector containing the boundary triangles
+ */
+std::vector<Triangle> getBoundaryTriangles(const Mesh<Tetrahedron>& mesh);
 
 
  /**
@@ -56,6 +70,15 @@ std::vector<Edge> getBoundaryEdges(const Mesh<Triangle>& mesh);
  */
 template <typename T>
 size_t countUniqueEdges(const Mesh<T>& mesh);
+
+
+/** 
+ * @brief Count the number of unique triangles in the mesh by iterating through all tetrahedra and adding their triangles to an unordered_set
+ * 
+ * @return number of unique triangles in the mesh 
+ */
+template <typename T>
+size_t countUniqueTriangles(const Mesh<T>& mesh);
 
 
 

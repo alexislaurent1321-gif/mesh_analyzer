@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <algorithm>
 
 
 #include "geometry/point.h"
@@ -41,4 +42,30 @@ struct Triangle {
      */
     bool containsPoint(const std::vector<Point>& vertices, const Point& P);
 
+    /**
+    * @brief Overload the == operator to compare two triangles based on their vertex indices
+    * 
+    * @param other The triangle to compare with
+    * @return true if the triangles have the same vertex indices (regardless of order), false otherwise
+    */
+    bool operator==(const Triangle& other) const {
+        std::array<size_t, 3> sortedV1 = v;
+        std::array<size_t, 3> sortedV2 = other.v;
+        std::sort(sortedV1.begin(), sortedV1.end());
+        std::sort(sortedV2.begin(), sortedV2.end());
+        return sortedV1 == sortedV2;
+    }
+
+};
+
+
+/** @brief A hash function for triangles */
+struct TriangleHash {
+    size_t operator()(const Triangle& f) const {
+        // Combine the hashes of the three vertex indices to create a unique hash for the triangle
+        size_t h = std::hash<size_t>{}(f.v[0]);
+        h ^= std::hash<size_t>{}(f.v[1]) + 0x9e3779b9 + (h << 6) + (h >> 2);  // Combine with the second vertex index
+        h ^= std::hash<size_t>{}(f.v[2]) + 0x9e3779b9 + (h << 6) + (h >> 2);  // Combine with the third vertex index
+        return h;
+    }
 };
