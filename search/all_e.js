@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['point_0',['Point',['../structPoint.html',1,'Point'],['../structPoint.html#ad92f2337b839a94ce97dcdb439b4325a',1,'Point::Point()'],['../structPoint.html#abfb275991b6f0f8864ad406ba3c8b3ce',1,'Point::Point(float x_, float y_)'],['../structPoint.html#ad56008741db728440b3d469e5fb5cc82',1,'Point::Point(float x_, float y_, float z_)']]],
-  ['possible_1',['as soon as possible',['../index.html#autotoc_md14',1,'']]],
-  ['progress_20_3a_2',['3D version : &lt;span class=&quot;tt&quot;&gt;demo_analyzer3D&lt;/span&gt; (in progress ...) :',['../index.html#autotoc_md8',1,'']]],
-  ['project_20structure_3',['Project structure',['../index.html#autotoc_md1',1,'']]]
+  ['on_20a_20regular_20grid_0',['Test on a regular grid',['../index.html#autotoc_md10',1,'']]],
+  ['operator_3c_3c_1',['operator&lt;&lt;',['../structPoint.html#a6d0e197b491ee2191ccda4d84636fbc1',1,'Point']]],
+  ['operator_3d_3d_2',['operator==',['../structTriangle.html#ac627bebcd4c69f22e652ba3661e19343',1,'Triangle']]]
 ];

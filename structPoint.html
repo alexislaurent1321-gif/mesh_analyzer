@@ -114,6 +114,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (float scalar)</td></tr>
 <tr class="memitem:ab00884528a2ba2a239a2625b0b43b92c" id="r_ab00884528a2ba2a239a2625b0b43b92c"><td class="memItemLeft" align="right" valign="top"><a id="ab00884528a2ba2a239a2625b0b43b92c" name="ab00884528a2ba2a239a2625b0b43b92c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (float scalar)</td></tr>
+<tr class="memitem:a40bac565423ccf8e993637874b7ee07a" id="r_a40bac565423ccf8e993637874b7ee07a"><td class="memItemLeft" align="right" valign="top"><a id="a40bac565423ccf8e993637874b7ee07a" name="a40bac565423ccf8e993637874b7ee07a"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>dot</b> (const <a class="el" href="structPoint.html">Point</a> &amp;other) const</td></tr>
+<tr class="memitem:a01ecc75f856e6ed5d7f2381c324b4b0c" id="r_a01ecc75f856e6ed5d7f2381c324b4b0c"><td class="memItemLeft" align="right" valign="top"><a id="a01ecc75f856e6ed5d7f2381c324b4b0c" name="a01ecc75f856e6ed5d7f2381c324b4b0c"></a>
+<a class="el" href="structPoint.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cross</b> (const <a class="el" href="structPoint.html">Point</a> &amp;other) const</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -127,8 +131,8 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>z</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:ab322db2b5457c54c9b959c6336792d2d" id="r_ab322db2b5457c54c9b959c6336792d2d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab322db2b5457c54c9b959c6336792d2d">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structPoint.html">Point</a> &amp;p)</td></tr>
-<tr class="memdesc:ab322db2b5457c54c9b959c6336792d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the &lt;&lt; operator to print the point's coordinates.  <br /></td></tr>
+<tr class="memitem:a6d0e197b491ee2191ccda4d84636fbc1" id="r_a6d0e197b491ee2191ccda4d84636fbc1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d0e197b491ee2191ccda4d84636fbc1">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structPoint.html">Point</a> &amp;point)</td></tr>
+<tr class="memdesc:a6d0e197b491ee2191ccda4d84636fbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the &lt;&lt; operator to print the point's coordinates.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct representing a point in 3D space. </p>
@@ -263,8 +267,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="ab322db2b5457c54c9b959c6336792d2d" name="ab322db2b5457c54c9b959c6336792d2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab322db2b5457c54c9b959c6336792d2d">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
+<a id="a6d0e197b491ee2191ccda4d84636fbc1" name="a6d0e197b491ee2191ccda4d84636fbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0e197b491ee2191ccda4d84636fbc1">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +284,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>p</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -294,7 +298,7 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td></td></tr>
-    <tr><td class="paramname">p</td><td></td></tr>
+    <tr><td class="paramname">point</td><td></td></tr>
   </table>
   </dd>
 </dl>

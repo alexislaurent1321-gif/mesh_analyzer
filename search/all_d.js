@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['on_20a_20regular_20grid_0',['Test on a regular grid',['../index.html#autotoc_md10',1,'']]],
-  ['operator_3c_3c_1',['operator&lt;&lt;',['../structPoint.html#ab322db2b5457c54c9b959c6336792d2d',1,'Point']]]
+  ['numvertices_0',['numVertices',['../structTetrahedron.html#aa65ae866da039782d178f2588456f5cb',1,'Tetrahedron::numVertices'],['../structTriangle.html#a02eabe353f17dd4405a2d2832ddf4747',1,'Triangle::numVertices']]]
 ];

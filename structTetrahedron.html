@@ -74,6 +74,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structTetrahedron-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Tetrahedron Struct Reference</div></div>
 </div><!--header-->
@@ -81,19 +82,28 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5ce7ed5ea2708ed1ba2f0cbb11ad6d18" id="r_a5ce7ed5ea2708ed1ba2f0cbb11ad6d18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ce7ed5ea2708ed1ba2f0cbb11ad6d18">containsPoint</a> (const std::vector&lt; <a class="el" href="structPoint.html">Point</a> &gt; &amp;vertices, const <a class="el" href="structPoint.html">Point</a> &amp;P)</td></tr>
-<tr class="memdesc:a5ce7ed5ea2708ed1ba2f0cbb11ad6d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the circumsphere of the tetrahedron contains a specific point.  <br /></td></tr>
+<tr class="memitem:a941102c257f9cc64ca6e1ee6610513f5" id="r_a941102c257f9cc64ca6e1ee6610513f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a941102c257f9cc64ca6e1ee6610513f5">containsPoint</a> (const std::vector&lt; <a class="el" href="structPoint.html">Point</a> &gt; &amp;vertices, const <a class="el" href="structPoint.html">Point</a> &amp;point)</td></tr>
+<tr class="memdesc:a941102c257f9cc64ca6e1ee6610513f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the circumsphere of the tetrahedron contains a specific point.  <br /></td></tr>
 <tr class="memitem:aee446c0f360c16c8af7bb1b567f5d62d" id="r_aee446c0f360c16c8af7bb1b567f5d62d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee446c0f360c16c8af7bb1b567f5d62d">containsEdge</a> (int v1, int v2) const</td></tr>
 <tr class="memdesc:aee446c0f360c16c8af7bb1b567f5d62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the circumsphere of the tetrahedron contains a specific edge defined by two vertex indices.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2790539ac32faab9c26be749c66ee121" id="r_a2790539ac32faab9c26be749c66ee121"><td class="memItemLeft" align="right" valign="top"><a id="a2790539ac32faab9c26be749c66ee121" name="a2790539ac32faab9c26be749c66ee121"></a>
-std::array&lt; int, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>v</b></td></tr>
-<tr class="memdesc:a2790539ac32faab9c26be749c66ee121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the vertices that form the tetrahedron. <br /></td></tr>
+<tr class="memitem:a33d000e74a3a569cfa1546cf89ecde3b" id="r_a33d000e74a3a569cfa1546cf89ecde3b"><td class="memItemLeft" align="right" valign="top"><a id="a33d000e74a3a569cfa1546cf89ecde3b" name="a33d000e74a3a569cfa1546cf89ecde3b"></a>
+std::array&lt; size_t, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>v</b></td></tr>
+<tr class="memdesc:a33d000e74a3a569cfa1546cf89ecde3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the vertices that form the tetrahedron. <br /></td></tr>
 <tr class="memitem:abacdc019f9e66d337aea2a16731af349" id="r_abacdc019f9e66d337aea2a16731af349"><td class="memItemLeft" align="right" valign="top"><a id="abacdc019f9e66d337aea2a16731af349" name="abacdc019f9e66d337aea2a16731af349"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBad</b> = false</td></tr>
 <tr class="memdesc:abacdc019f9e66d337aea2a16731af349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag used in Delaunay triangulation to mark tetrahedra that need to be removed. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a76d53e4c9d1a9a4edfdc14489ae91c88" id="r_a76d53e4c9d1a9a4edfdc14489ae91c88"><td class="memItemLeft" align="right" valign="top"><a id="a76d53e4c9d1a9a4edfdc14489ae91c88" name="a76d53e4c9d1a9a4edfdc14489ae91c88"></a>
+static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>elementType</b> = 4</td></tr>
+<tr class="memdesc:a76d53e4c9d1a9a4edfdc14489ae91c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gmsh element type for tetrahedra. <br /></td></tr>
+<tr class="memitem:aa65ae866da039782d178f2588456f5cb" id="r_aa65ae866da039782d178f2588456f5cb"><td class="memItemLeft" align="right" valign="top"><a id="aa65ae866da039782d178f2588456f5cb" name="aa65ae866da039782d178f2588456f5cb"></a>
+static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>numVertices</b> = 4</td></tr>
+<tr class="memdesc:aa65ae866da039782d178f2588456f5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertices in a tetrahedron. <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="aee446c0f360c16c8af7bb1b567f5d62d" name="aee446c0f360c16c8af7bb1b567f5d62d"></a>
@@ -126,8 +136,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBad</b> = false</td
 
 </div>
 </div>
-<a id="a5ce7ed5ea2708ed1ba2f0cbb11ad6d18" name="a5ce7ed5ea2708ed1ba2f0cbb11ad6d18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ce7ed5ea2708ed1ba2f0cbb11ad6d18">&#9670;&#160;</a></span>containsPoint()</h2>
+<a id="a941102c257f9cc64ca6e1ee6610513f5" name="a941102c257f9cc64ca6e1ee6610513f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941102c257f9cc64ca6e1ee6610513f5">&#9670;&#160;</a></span>containsPoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +150,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBad</b> = false</td
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>P</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="structPoint.html">Point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>point</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -149,11 +159,11 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isBad</b> = false</td
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vertices</td><td>The list of vertices in the mesh </td></tr>
-    <tr><td class="paramname">P</td><td>The point to check </td></tr>
+    <tr><td class="paramname">point</td><td>The point to check </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if P is inside the circumsphere, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if point is inside the circumsphere, false otherwise </dd></dl>
 
 </div>
 </div>

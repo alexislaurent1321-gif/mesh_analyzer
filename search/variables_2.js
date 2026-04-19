@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ratios_0',['ratios',['../classMesh.html#a742d460aaf9322b1ab64defc4b3fdd0a',1,'Mesh']]]
+  ['numvertices_0',['numVertices',['../structTetrahedron.html#aa65ae866da039782d178f2588456f5cb',1,'Tetrahedron::numVertices'],['../structTriangle.html#a02eabe353f17dd4405a2d2832ddf4747',1,'Triangle::numVertices']]]
 ];
