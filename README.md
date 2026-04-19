@@ -172,7 +172,8 @@ To clone the project :
 git clone --recurse-submodules https://github.com/alexislaurent1321-gif/mesh_analyzer.git
 ```
 
-Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible. On Windows, to run ParaView from the command line, add the ParaView bin folder (e.g., C:\Program Files\ParaView 6.1.0\bin) to the PATH in the environment variables.
+Compilation on Windows (preferably with **MSVC**) or Linux. Use the **VS Code** interface if possible. On Windows, to run ParaView from the command line, add the ParaView bin folder (e.g., `C:\Program Files\ParaView 6.1.0\bin`) to the `PATH` environment variables.
+
 The demos can be run in the `scripts` folder. Scripts are named as follows : `run_{demo}.sh` for Linux or `run_{demo}.bat` for Windows.
 
 
