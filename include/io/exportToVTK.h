@@ -1,3 +1,6 @@
+#ifndef EXPORT_TO_VTK_H
+#define EXPORT_TO_VTK_H
+
 #include "mesh/mesh.h"
 
 /** 
@@ -14,3 +17,4 @@ void exportToVTK(const std::string& filename, const Mesh<Triangle>& mesh);
 */
 void exportToVTK(const std::string& filename, const Mesh<Tetrahedron>& mesh);
 
+#endif

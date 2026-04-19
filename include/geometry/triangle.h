@@ -1,3 +1,6 @@
+#ifndef TRIANGLE_H
+#define TRIANGLE_H
+
 #include <vector>
 #include <array>
 #include <iostream>
@@ -69,3 +72,5 @@ struct TriangleHash {
         return h;
     }
 };
+
+#endif

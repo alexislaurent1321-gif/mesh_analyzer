@@ -43,7 +43,7 @@ size_t countUniqueTriangles(const Mesh<T>& mesh) {
 
 
 template <>
-float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t)  {
+inline float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t)  {
     // triangle lengths
     float a = mesh.vertices[t.v[0]].distance(mesh.vertices[t.v[1]]);
     float b = mesh.vertices[t.v[1]].distance(mesh.vertices[t.v[2]]);
@@ -57,7 +57,7 @@ float calculateAspectRatio(const Mesh<Triangle>& mesh, const Triangle& t)  {
 
 
 template <>
-float calculateAspectRatio(const Mesh<Tetrahedron>& mesh, const Tetrahedron& t)  {
+inline float calculateAspectRatio(const Mesh<Tetrahedron>& mesh, const Tetrahedron& t)  {
 
     Point A = mesh.vertices[t.v[0]];
     Point B = mesh.vertices[t.v[1]];
@@ -102,7 +102,7 @@ void calculateAspectRatios(Mesh<T>& mesh) {
 // Display analysis
 
 template <>
-void analyzeMesh(Mesh<Triangle>& mesh) {
+inline void analyzeMesh(Mesh<Triangle>& mesh) {
     // Basic info
     std::cout << "Vertices : " << mesh.vertices.size() << std::endl;
     std::cout << "Elements : " << mesh.elements.size() << std::endl;
@@ -117,7 +117,7 @@ void analyzeMesh(Mesh<Triangle>& mesh) {
 
 
 template <>
-void analyzeMesh(Mesh<Tetrahedron>& mesh) {
+inline void analyzeMesh(Mesh<Tetrahedron>& mesh) {
     // Basic info
     std::cout << "Vertices : " << mesh.vertices.size() << std::endl;
     std::cout << "Elements : " << mesh.elements.size() << std::endl;

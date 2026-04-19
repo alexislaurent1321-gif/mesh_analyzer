@@ -1,3 +1,6 @@
+#ifndef LOAD_OBJ_H
+#define LOAD_OBJ_H
+
 #include "mesh/mesh.h"
 
 /**
@@ -9,5 +12,5 @@
  */
 bool loadObj(Mesh<Triangle>& mesh, const std::string& path);
 
-
+#endif
 
