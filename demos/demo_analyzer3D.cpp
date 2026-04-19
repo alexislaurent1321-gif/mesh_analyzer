@@ -11,7 +11,7 @@
     Mesh<Tetrahedron> mesh;
     loadMsh<Tetrahedron>(mesh, "models/sphere.msh");
   
-    // analyzeMesh<Tetrahedron>(mesh);
+    analyzeMesh<Tetrahedron>(mesh);
     exportToVTK("output.vtk", mesh);
 
 
