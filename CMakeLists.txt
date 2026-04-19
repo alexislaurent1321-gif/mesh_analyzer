@@ -16,7 +16,7 @@ add_library(mesh_analyzer
     src/mesh/mesh_basic_shapes.cpp
     src/mesh/mesh_triangulation.cpp
 
-    src/mesh/mesh_analysis/mesh_analysis_getValence.cpp
+    src/mesh/mesh_analysis/mesh_analysis_boundaries.cpp
     src/mesh/mesh_analysis/mesh_analysis_aspectRatio.tpp
     src/mesh/mesh_analysis/mesh_analysis_count.tpp
     src/mesh/mesh_analysis/mesh_analysis.tpp

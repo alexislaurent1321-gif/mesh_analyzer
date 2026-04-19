@@ -14,6 +14,8 @@
     analyzeMesh<Tetrahedron>(mesh);
     exportToVTK("output.vtk", mesh);
 
+    std::cout << "boundaries triangles : " << getBoundaryTriangles(mesh).size() << std::endl;
+
 
    return 0;
  }
