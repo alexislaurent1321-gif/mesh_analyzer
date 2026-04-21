@@ -84,7 +84,7 @@ The example used here is a hemisphere with some missing faces. Part of the edge,
 
 The results show that all edges are detected.
 
-### 3D version : `demo_analyzer3D` : 
+### 3D version : `demo/demo_analyzer3D.cpp` : 
 The demo allows you to do the same thing for a tetrahedral mesh. The missing step is to highlight the edge faces in ParaView. The selected format is .msh (version 4.1), the parser was chosen based on the library [mshio](https://github.com/qnzhou/MshIO.git) by qnzhou. Gmsh's Modern Format requires manually converting the format's tags into element indices. Here, we use the example of a sphere to calculate its statistics :
 
 <img width="2193" height="1131" alt="sphere" src="https://github.com/user-attachments/assets/e7895227-b506-435d-a943-edff87fcb268" style="width:50%;" />
