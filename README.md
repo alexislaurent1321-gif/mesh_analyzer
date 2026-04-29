@@ -1,6 +1,6 @@
-[![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/mesh_analyzer/)
+[![Documentation](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://alexislaurent1321-gif.github.io/Enmesh/)
 
-# Mesh generation
+# Enmesh
 Project to analyze a triangular mesh or create one using Delaunay. 
 
 This project is currently in the process of integrating 3D mesh management (created on [Gmsh](https://gmsh.info/)). 
