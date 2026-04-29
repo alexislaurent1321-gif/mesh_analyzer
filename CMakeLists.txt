@@ -26,7 +26,7 @@ add_library(mesh_analyzer
     src/io/loadObj.cpp
 )
 
-target_include_directories(mesh_analyzer PUBLIC include/Enmesh)
+target_include_directories(mesh_analyzer PUBLIC include)
 
 target_link_libraries(mesh_analyzer PUBLIC mshio tinyobjloader)
 
